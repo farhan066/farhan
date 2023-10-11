@@ -1,30 +1,26 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <header>
+    <div class="logo">
+      <img src="./assets/img/logo.png" alt="Farhan Logo">
+    </div>
+    <nav class="menu">
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+  <router-view
+  :projects="projects"
+  />
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+<script>
+  import list from "@/projects.json"
+  export default{
+    data(){
+      return{
+        projects: list
+      }
+    }
+  }
+</script>
