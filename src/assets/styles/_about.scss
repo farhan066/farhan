@@ -1,0 +1,21 @@
+#short-about {
+
+  .about-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+
+    .circle-photo {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+
+  .about-text {
+    @include standard-text
+  }
+}

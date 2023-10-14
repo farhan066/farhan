@@ -1,0 +1,25 @@
+$black-1: #000;
+$black-2: #121212;
+$black-3: #1a1a1a;
+$white: #fafafa;
+$grey: #626262;
+
+$lh-1: 0.84;
+
+:root {
+  --font-xxlg: 13rem;
+  --font-xlg: 10rem;
+  --font-lg: 7rem;
+  --font-med: 3.5rem;
+  --font-sml: 1.1rem;
+}
+
+@include breakpoint-down(medium) {
+  :root {
+    --font-xxlg: 12rem;
+    --font-xlg: 8rem;
+    --font-lg: 6rem;
+    --font-med: 3rem;
+    --font-sml: 1rem;
+  }
+}

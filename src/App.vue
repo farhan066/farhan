@@ -1,11 +1,11 @@
 <template>
   <header>
     <div class="logo">
-      <img src="./assets/img/logo.png" alt="Farhan Logo">
+      <a href="/"><img src="./assets/img/logo.png" alt="Farhan Logo"></a>
     </div>
     <nav class="menu">
       <ul>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#projects" class="btn-cap">Projects</a></li>
       </ul>
     </nav>
   </header>
@@ -23,4 +23,6 @@
       }
     }
   }
+
+
 </script>

@@ -1,19 +1,19 @@
 <template>
     <div class="card">
-        <a class="img" :href="pro.link" target="_blank">
-            <img :src="require(`@/assets/img/${pro.image}`)" :alt="pro.title">
+       <div class="card-text">
+        <h2 class="card-title">{{ pro.title }}</h2>
+        <p class="card-subtitle">{{ pro.tools }}</p>
+       </div>
+       <div class="card-img">
+        <a class="card-link" :href="pro.link" target="_blank">
+                <img :src="require(`@/assets/img/${pro.img}`)" :alt="pro.title">
         </a>
-        <h2 class="project-title">{{ pro.title }}</h2>
+        </div>
     </div>
 </template>
 
 <script>
     export default{
-        props:['pro'],
-        data(){
-            return{
-
-            }
-        }
+        props:['pro']
     }
 </script>

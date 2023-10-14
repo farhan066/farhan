@@ -20,12 +20,12 @@
     <section id="short-about">
       <div class="about-head">
         <img src="@/assets/img/farhan.jpg" class="circle-photo" alt="Farhan">
-        <div class="btn-circle">More <br> About Me</div>
+        <a href="#" class="btn-cir">More <br> About Me</a>
       </div>
       <div class="about-text">
         <p class="para">
           I'm Farhan, a student with a deep passion for exploration. Whether it's delving into the digital world or
-          experimenting with digital design, I'm always on the lookout for new horizons.
+          experimenting with digital design, I'm always on the lookout for new horizons. <br><br>
           This is my canvas, where I share my creative works, hobbies, and the exciting journey of discovery. Join me as
           we navigate the realms of innovation and imagination!
         </p>
@@ -34,8 +34,8 @@
 
     <!-- =========Projects======== -->
     <section id="projects">
-      <h1 class="headline">Feel free to explore a couple of <span class="highlight">websites</span> and <span
-          class="highlight">visual designs</span> I've had some fun creating.</h1>
+      <h1 class="headline">Feel free to explore a couple of <span class="highlight">projects</span> I've had some fun working on.</h1>
+      
       <div class="wrapper">
         <ProjectCard 
           v-for="(pro, i) in projects"
@@ -46,36 +46,21 @@
       </div>
     </section>
 
-    <!-- ========contact========= -->
-    <section id="contact">
-      <div class="wrapper">
-        <h1 class="contact-head">
-          Let's <br><span class="italic">Connect</span>
-          <img src="@/assets/img/arrow.png" alt="Arrow" class="arrow">
-        </h1>
-        <div class="social-icons">
-          <ul>
-            <li><a href="mailto:farhan06.contact@gmail.com" target="_blank"><i class="fa-regular fa-envelope"></i> </a></li>
-            <li><a href="https://behance.com/farhanahmad9" target="_blank"><i class="fa-brands fa-behance"></i> </a></li>
-            <li><a href="https://github.com/farhan066" target="_blank"><i class="fa-brands fa-github"></i> </a></li>
-            <li><a href="https://www.linkedin.com/in/farhan-ahmad-8194591b7" target="_blank"><i class="fa-brands fa-linkedin-in"></i> </a></li>
-            <li><a href="https://instagram.com/far_han_ig" target="_blank"><i class="fa-brands fa-facebook-f"></i> </a></li>
-            <li><a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i> </a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
+   <!-- ===========contact============ -->
+   <ContactSection />
 
   </div>
 </template>
 
 <script>
 import ProjectCard from "@/components/ProjectCard.vue"
+import ContactSection from "@/components/ContactSection.vue"
 
 export default {
   props:["projects"],
   components: {
-    ProjectCard
+    ProjectCard,
+    ContactSection
   }
 }
 </script>

@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: $white;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: $black-1;
+  line-height: 1.3;
+  overflow-x: hidden;
+}
+
+img {
+  width: 100%;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.flex {
+  display: flex;
+}
+
+section,
+header {
+  max-width: 1100px;
+  margin: auto;
+}
+section {
+  padding: 30px 25px 0 25px;
+  margin-top: 150px;
+}
+section:first-child {
+  margin-top: 0;
+}
+.btn-cap {
+  font-size: 12px;
+  text-transform: uppercase;
+  background-color: transparent;
+  padding: 8px 20px;
+  border-radius: 1000px;
+  transition: 0.3s;
+  font-weight: 400;
+
+  &:hover {
+    background-color: $white;
+    color: $black-1;
+  }
+}
+
+.btn-cir {
+  border: 1px solid $white;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-sml);
+  display: none;
+}
+
+@mixin standard-text {
+  font-size: var(--font-med);
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -3px;
+  padding-right: 30%;
+
+  @include breakpoint-down(medium){
+    padding-right: 10%;
+  }
+  @include breakpoint-down(small){
+    padding-right: 0;
+  }
+}
+@mixin big-text {
+  font-size: var(--font-lg);
+  line-height: 0.85;
+  font-weight: 600;
+}
+.headline {
+  @include standard-text();
+  color: $grey;
+  margin-bottom: 100px;
+}
+.highlight {
+  color: $white;
+}
+.italic {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.copyEmailAlert {
+    z-index: 100;
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%, 300px);
+    background-color: var(--black-1);
+    color: $white;
+    box-shadow: 0 0 10px rgba(19, 19, 19, 0.5);
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: 0.5s;
+    &__show {
+      transform: translate(-50%, 0px);
+    }
+  }
+
+
