@@ -3,7 +3,6 @@
   padding-bottom: 0;
 
   .wrapper {
-    // border: 1px solid $grey;
     border-radius: 20px;
     min-height: calc(100vh - 90px); //removing the h of header
     padding: 20px;
@@ -11,7 +10,9 @@
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
-    // position: relative;
+    @include breakpoint-up(large){
+      border: 1px solid $grey;
+    }
   }
   .intro-head {
     display: flex;

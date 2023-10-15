@@ -21,7 +21,7 @@
             </li>
           </ul>
         </div>
-        <p class="copywrite">Designed and developed by me ©<span class="date">2023</span> - All Rights Reserved</p>
+        <p class="copywrite">Designed and developed by me ©{{ currentYear }} - All Rights Reserved</p>
       </footer>
     </div>
     <p class="copyEmailAlert">Email Copied!</p>
@@ -32,7 +32,8 @@
 export default {
   data() {
     return {
-      email: 'farhan06.contact@gmail.com'
+      email: 'farhan06.contact@gmail.com',
+      currentYear: new Date().getFullYear()
     }
   },
   methods: {
