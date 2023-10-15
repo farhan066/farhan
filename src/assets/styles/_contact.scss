@@ -8,12 +8,14 @@
     background: url('../img/red-bg.jpg')
       center/cover no-repeat;
     width: 100%;
-    min-height: 70vh;
+    min-height: 120vh;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     @include breakpoint-up(medium) {
       border-radius: 30px;
-      min-height: 120vh;
+    }
+    @include breakpoint-up(large) {
+      min-height: 170vh;
     }
     display: grid;
     place-items: center;
