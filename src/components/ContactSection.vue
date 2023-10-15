@@ -10,7 +10,7 @@
       <footer>
 
         <div class="social-icons">
-          <ul @mouseover="mouseover">
+          <ul>
             <li><a href="#" @click.prevent="copyEmail()"><i class="fa-regular fa-envelope"></i> </a></li>
             <li><a href="https://behance.com/farhanahmad9" target="_blank"><i class="fa-brands fa-behance"></i> </a></li>
             <li><a href="https://github.com/farhan066" target="_blank"><i class="fa-brands fa-github"></i> </a></li>

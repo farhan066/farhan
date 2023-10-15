@@ -40,20 +40,25 @@ header {
   margin: auto;
 }
 section {
-  padding: 30px 25px 0 25px;
+  padding: 30px 15px 0 15px;
   margin-top: 150px;
+
+  @include breakpoint-up(medium){
+    padding: 30px 25px 0 25px;
+  }
 }
 section:first-child {
   margin-top: 0;
 }
 .btn-cap {
-  font-size: 12px;
+  font-size: var(--font-sml);
   text-transform: uppercase;
   background-color: transparent;
-  padding: 8px 20px;
+  padding: 8px 15px;
   border-radius: 1000px;
   transition: 0.3s;
   font-weight: 400;
+  border: 1px solid $white;
 
   &:hover {
     background-color: $white;
@@ -78,13 +83,13 @@ section:first-child {
   font-style: normal;
   font-weight: 500;
   letter-spacing: -3px;
-  padding-right: 30%;
+  padding-right: 0;
 
-  @include breakpoint-down(medium){
+  @include breakpoint-up(medium){
     padding-right: 10%;
   }
-  @include breakpoint-down(small){
-    padding-right: 0;
+  @include breakpoint-up(large){
+    padding-right: 25%;
   }
 }
 @mixin big-text {
@@ -111,7 +116,7 @@ section:first-child {
     bottom: 30px;
     left: 50%;
     transform: translate(-50%, 300px);
-    background-color: var(--black-1);
+    background-color: $black-2;
     color: $white;
     box-shadow: 0 0 10px rgba(19, 19, 19, 0.5);
     font-weight: 500;

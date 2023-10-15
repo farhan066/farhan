@@ -2,24 +2,33 @@ $black-1: #000;
 $black-2: #121212;
 $black-3: #1a1a1a;
 $white: #fafafa;
-$grey: #626262;
+$grey: #747474;
 
 $lh-1: 0.84;
 
 :root {
-  --font-xxlg: 13rem;
-  --font-xlg: 10rem;
-  --font-lg: 7rem;
-  --font-med: 3.5rem;
-  --font-sml: 1.1rem;
-}
+  --font-xxlg: 6rem;
+  --font-xlg: 5rem;
+  --font-lg: 4rem;
+  --font-med: 3rem;
+  --font-sml: 1rem;
+};
 
-@include breakpoint-down(medium) {
+@include breakpoint-up(medium){
   :root {
-    --font-xxlg: 12rem;
-    --font-xlg: 8rem;
-    --font-lg: 6rem;
-    --font-med: 3rem;
-    --font-sml: 1rem;
+    --font-xxlg: 8rem;
+    --font-xlg: 7rem;
+    --font-lg: 5.5rem;
+    --font-med: 3.5rem;
+    --font-sml: 1.1rem;
+  }
+}
+@include breakpoint-up(large){
+  :root {
+    --font-xxlg: 13rem;
+    --font-xlg: 10rem;
+    --font-lg: 7rem;
+    --font-med: 3.5rem;
+    --font-sml: 1.1rem;
   }
 }

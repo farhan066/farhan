@@ -1,8 +1,12 @@
 header{
     display: flex;
     justify-content: space-between;
-    padding: 25px;
+    padding: 25px 15px;
     align-items: center;
+
+    @include breakpoint-up(large){
+    padding: 25px;
+    }
 }
 .logo{
     width: 80px;

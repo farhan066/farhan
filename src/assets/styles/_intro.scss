@@ -1,54 +1,67 @@
-#intro{
-    padding-top: 0;
-    padding-bottom: 0;
-    
-    .wrapper{
-        border: 1px solid $grey;
-        border-radius: 20px;
-        min-height: calc(100vh - 90px); //removing the h of header
-        padding: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-transform: uppercase;
-        position: relative;
-    }
-    .intro-head{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-        span{
-            font-size: var(--font-lg);
-            font-weight: 600;
-            line-height: $lh-1;
-            letter-spacing: -6px;
+#intro {
+  padding-top: 0;
+  padding-bottom: 0;
 
-            &:nth-child(2){
-                margin-left: -120px;                
-            }
-            &:nth-child(3){
-                margin-right: -110px;                
-            }
+  .wrapper {
+    border: 1px solid $grey;
+    border-radius: 20px;
+    min-height: calc(100vh - 90px); //removing the h of header
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    // position: relative;
+  }
+  .intro-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    span {
+      font-size: var(--font-lg);
+      font-weight: 600;
+      line-height: $lh-1;
+      letter-spacing: -6px;
+
+      &:nth-child(2) {
+        margin-left: -90px;
+
+        @include breakpoint-up(large) {
+          margin-left: -120px;
         }
-        .intro-p{
-            font-size: var(--font-sml);
-            width: 220px;
-            text-align: right;
-            position: absolute;
-            left: -147px;
-            top: 121px;
+      }
+      &:nth-child(3) {
+        margin-right: -70px;
+
+        @include breakpoint-up(large) {
+          margin-right: -110px;
         }
+      }
     }
-    // .blob{
-    //     background-color: $white;
-    //     width: 100px;
-    //     height: 160px;
-    //     border-radius: 100%;
-    //     filter: blur(80px);
-    //     position: absolute;
-    //     top: 120px;
-    //     right: 200px;
-    // }
+    .intro-p {
+      font-size: var(--font-sml);
+      text-align: center;
+      margin-top: 5px;
+      color: $grey;
+      max-width: 500px;
+      @include breakpoint-up(large) {
+        position: absolute;
+        left: -128px;
+        top: 116px;
+        text-align: right;
+        max-width: 200px;
+      }
+    }
+  }
+  // .blob{
+  //     background-color: $white;
+  //     width: 100px;
+  //     height: 160px;
+  //     border-radius: 100%;
+  //     filter: blur(80px);
+  //     position: absolute;
+  //     top: 120px;
+  //     right: 200px;
+  // }
 }
-

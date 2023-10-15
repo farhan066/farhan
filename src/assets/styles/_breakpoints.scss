@@ -1,5 +1,5 @@
 $breakpoints-down:(
-    "small":"412px",
+    "small":"499px",
     "medium":"800px",
     "large": "1000px"
 );
@@ -12,9 +12,9 @@ $breakpoints-down:(
 
 
 $breakpoints-up:(
-     "medium": "401px",
-     "large": "901px",
-     "xlarge": "1301px"
+     "medium": "500px",
+     "large": "801px",
+     "xlarge": "1001px"
  );
 
  @mixin breakpoint-up($size){
