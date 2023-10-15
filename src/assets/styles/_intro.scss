@@ -3,7 +3,7 @@
   padding-bottom: 0;
 
   .wrapper {
-    border: 1px solid $grey;
+    // border: 1px solid $grey;
     border-radius: 20px;
     min-height: calc(100vh - 90px); //removing the h of header
     padding: 20px;
@@ -42,9 +42,11 @@
     .intro-p {
       font-size: var(--font-sml);
       text-align: center;
-      margin-top: 5px;
-      color: $grey;
+      margin-top: 10px;
+      color: $white;
       max-width: 500px;
+      font-weight: 400;
+      line-height: 1.1;
       @include breakpoint-up(large) {
         position: absolute;
         left: -128px;

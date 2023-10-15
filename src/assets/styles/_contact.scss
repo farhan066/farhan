@@ -8,11 +8,12 @@
     background: url('../img/red-bg.jpg')
       center/cover no-repeat;
     width: 100%;
-    min-height: 100vh;
+    min-height: 70vh;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     @include breakpoint-up(medium) {
       border-radius: 30px;
+      min-height: 120vh;
     }
     display: grid;
     place-items: center;
@@ -80,7 +81,7 @@
     text-align: center;
 
     .copywrite {
-      font-size: var(--font-sml);
+      font-size: var(--font-xsml);
       color: #ffffffd8;
       padding: 10px 0;
     }

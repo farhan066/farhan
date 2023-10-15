@@ -9,18 +9,19 @@ $lh-1: 0.84;
 :root {
   --font-xxlg: 6rem;
   --font-xlg: 5rem;
-  --font-lg: 4rem;
+  --font-lg: 5.2rem;
   --font-med: 3rem;
-  --font-sml: 1rem;
+  --font-sml: 1.3rem;
+  --font-xsml: 1rem;
 };
 
 @include breakpoint-up(medium){
   :root {
     --font-xxlg: 8rem;
     --font-xlg: 7rem;
-    --font-lg: 5.5rem;
+    --font-lg: 7rem;
     --font-med: 3.5rem;
-    --font-sml: 1.1rem;
+    --font-sml: 1.2rem;
   }
 }
 @include breakpoint-up(large){
