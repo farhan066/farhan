@@ -1,6 +1,98 @@
 #contact {
   padding: 0;
   min-width: 100%;
+
+  .wrapper{
+    background-color: $white;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    padding: 30px 15px;
+    min-height: 60vh;
+
+    @include breakpoint-up(large){
+      min-height: 100vh;
+      padding: 40px;
+    }
+    .contact__top{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      @include breakpoint-up(large){
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+      }
+      &__text{
+        font-size: var(--font-xlg);
+        color: $black-1;
+        line-height: $lh-1;
+        font-weight: 600;
+        letter-spacing: -5px;
+        max-width: 1000px;
+      }
+      &__circle--text{
+        background-color: $black-2;
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        margin-top: 30px;
+        display: none;
+      }
+    }
+  }
+  .contact__footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    &__links{
+      a{
+        font-size: var(--font-sml);
+        color: $black-1;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: underline;
+        line-height: 1;
+        transition: .3s;
+
+        &:hover{
+          opacity: .6;
+        }
+        &.email{
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px;
+          text-decoration: none;
+        }
+        .arrow{
+          height: 20px;
+          padding-left: 5px;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+    &__copywrite{
+      display: none;
+
+      @include breakpoint-up(large){
+        display: flex;
+        color: $black-2;
+        font-size: var(--font-sml);
+        text-align: right;
+      }
+
+    }
+  }
+}
+
+/*
+#contact {
+  padding: 0;
+  min-width: 100%;
   @include breakpoint-up(medium) {
     padding: 20px;
   }
@@ -89,3 +181,5 @@
     }
   }
 }
+
+*/

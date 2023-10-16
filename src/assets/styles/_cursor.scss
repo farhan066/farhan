@@ -1,0 +1,11 @@
+.cursor{
+    width: 20px;
+    height: 20px;
+    background-color: $white;
+    border-radius: 50%;
+    opacity: .8;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    transition: .05s linear;
+    z-index: 999;
+}

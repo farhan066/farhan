@@ -9,6 +9,7 @@
       </ul>
     </nav>
   </header>
+  <div class="cursor"></div>
   <router-view
   :projects="projects"
   />
@@ -21,8 +22,15 @@
       return{
         projects: list
       }
-    }
+    },
+    mounted(){
+    const cursor = document.querySelector(".cursor")
+         
+         document.addEventListener('mousemove', e =>{
+           cursor.setAttribute("style", "top: "+e.pageY+"px; left: "+e.pageX+"px;")
+         })
   }
-
+  }
+  
 
 </script>
