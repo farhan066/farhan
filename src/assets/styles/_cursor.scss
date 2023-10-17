@@ -3,9 +3,36 @@
     height: 20px;
     background-color: $white;
     border-radius: 50%;
-    opacity: .8;
     position: absolute;
     transform: translate(-50%,-50%);
-    transition: .05s linear;
-    z-index: 999;
+    transition: 200ms ease-out;
+    z-index: 1000;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    display: none;
+    
+    @media (hover: hover) {
+            display: block;
+    }
+}
+
+.cursor__expand{
+    animation: scale .5s forwards;
+    background-color: transparent;
+    border: 3px solid $white;
+}
+@keyframes scale {
+    0%{
+        width: 20px;
+        height: 20px;
+    }
+    50%{
+        width: 60px;
+        height: 60px;
+    }
+    100%{
+        width: 20px;
+        height: 20px;
+        opacity: 0;
+    }
 }

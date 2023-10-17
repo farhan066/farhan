@@ -9,28 +9,53 @@
       </ul>
     </nav>
   </header>
-  <div class="cursor"></div>
-  <router-view
-  :projects="projects"
-  />
+  <div class="cursor" :style="cursorStyle"></div>
+  <router-view :projects="projects" />
 </template>
 
 <script>
-  import list from "@/projects.json"
-  export default{
-    data(){
-      return{
-        projects: list
-      }
+import list from "@/projects.json"
+export default {
+  data() {
+    return {
+      projects: list,
+      cursorX: 0,
+      cursorY: 0,
+    }
+  },
+  computed: {
+    cursorStyle() {
+      return {
+        top: this.cursorY + 'px',
+        left: this.cursorX + 'px',
+      };
     },
-    mounted(){
-    const cursor = document.querySelector(".cursor")
-         
-         document.addEventListener('mousemove', e =>{
-           cursor.setAttribute("style", "top: "+e.pageY+"px; left: "+e.pageX+"px;")
-         })
-  }
-  }
-  
+  },
+  mounted() {
+    window.addEventListener("mousemove", this.updateCursor)
+    document.addEventListener("click", this.scaleCursor)
+    // window.addEventListener("scroll", this.updateCursorOnScroll)
+  },
+  methods: {
+    updateCursor(e) {
+      this.cursorX = e.pageX;
+      this.cursorY = e.pageY;
+      console.log(e.pageY)
+    },
+    // updateCursorOnScroll(e) {
+    //   this.cursorY = e.pageY;
+    // },
+    scaleCursor() {
+      const cursor = document.querySelector('.cursor')
+
+      cursor.classList.add("cursor__expand")
+      setTimeout(() => {
+        cursor.classList.remove("cursor__expand")
+      }, 500)
+    }
+  },
+};
+
+
 
 </script>
