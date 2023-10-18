@@ -34,20 +34,14 @@ export default {
   mounted() {
     window.addEventListener("mousemove", this.updateCursor)
     document.addEventListener("click", this.scaleCursor)
-    // window.addEventListener("scroll", this.updateCursorOnScroll)
   },
   methods: {
     updateCursor(e) {
       this.cursorX = e.pageX;
       this.cursorY = e.pageY;
-      console.log(e.pageY)
     },
-    // updateCursorOnScroll(e) {
-    //   this.cursorY = e.pageY;
-    // },
     scaleCursor() {
       const cursor = document.querySelector('.cursor')
-
       cursor.classList.add("cursor__expand")
       setTimeout(() => {
         cursor.classList.remove("cursor__expand")

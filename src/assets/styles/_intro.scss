@@ -10,9 +10,6 @@
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
-    @include breakpoint-up(large){
-      border: 1px solid $grey;
-    }
   }
   .intro-head {
     display: flex;
@@ -20,10 +17,11 @@
     align-items: center;
     position: relative;
     span {
-      font-size: var(--font-lg);
-      font-weight: 600;
+      font-size: var(--font-xlg);
+      font-weight: 500;
       line-height: $lh-1;
       letter-spacing: -6px;
+      clip-path: polygon(0 0, 110% 0, 110% 100%, 0 100%);
 
       &:nth-child(2) {
         margin-left: -90px;
@@ -50,8 +48,8 @@
       line-height: 1.1;
       @include breakpoint-up(large) {
         position: absolute;
-        left: -175px;
-        top: 116px;
+        left: -170px;
+        top: 147px;
         text-align: right;
         max-width: 250px;
       }
