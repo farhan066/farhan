@@ -1,6 +1,9 @@
 #contact {
   padding: 0;
   min-width: 100%;
+  a,li,h1,h2,p,.word,.char,.line{
+    color: $black-1 ;
+  }
 
   .wrapper{
     background-color: $white;
@@ -28,14 +31,15 @@
       }
       &__text{
         font-size: var(--font-xlg);
-        color: $black-1;
         line-height: $lh-1;
         font-weight: 600;
         letter-spacing: -5px;
         max-width: 1000px;
+        .word{
+          clip-path: polygon(0 0, 110% 0, 110% 120%, 0 120%);
+        }
       }
       &__circle--text{
-        background-color: $black-2;
         width: 60px;
         height: 60px;
         border-radius: 100%;
@@ -52,7 +56,6 @@
     &__links{
       a{
         font-size: var(--font-sml);
-        color: $black-1;
         font-weight: 700;
         text-transform: uppercase;
         text-decoration: underline;
@@ -81,7 +84,6 @@
 
       @include breakpoint-up(large){
         display: flex;
-        color: $black-2;
         font-size: var(--font-sml);
         text-align: right;
       }

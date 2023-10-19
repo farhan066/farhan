@@ -10,11 +10,15 @@
     </nav>
   </header>
   <div class="cursor" :style="cursorStyle"></div>
-  <router-view :projects="projects" />
+  <router-view 
+  :projects="projects" 
+  />
 </template>
 
 <script>
 import list from "@/projects.json"
+import Lenis from '@studio-freight/lenis'
+import { gsap } from "gsap";
 export default {
   data() {
     return {
@@ -34,6 +38,8 @@ export default {
   mounted() {
     window.addEventListener("mousemove", this.updateCursor)
     document.addEventListener("click", this.scaleCursor)
+    this.scrollSmooth()
+    this.animate()
   },
   methods: {
     updateCursor(e) {
@@ -46,6 +52,28 @@ export default {
       setTimeout(() => {
         cursor.classList.remove("cursor__expand")
       }, 500)
+    },
+    scrollSmooth(){
+      const lenis = new Lenis()
+
+        // lenis.on('scroll', (e) => {
+        //   console.log(e)
+        // })
+
+        function raf(time) {
+          lenis.raf(time)
+          requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
+    },
+    animate(){
+      const header = document.querySelector('header');
+      gsap.from(header,{
+        y:-100,
+        duration:1,
+        delay:.2
+      })
     }
   },
 };

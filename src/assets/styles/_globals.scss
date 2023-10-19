@@ -130,4 +130,7 @@ section:first-child {
     }
   }
 
+  .clipText{
+    clip-path: polygon(0 0, 110% 0, 110% 100%, 0 100%);
+  }
 
