@@ -17,7 +17,7 @@
 
 <script>
 import list from "@/projects.json"
-import Lenis from '@studio-freight/lenis'
+// import Lenis from '@studio-freight/lenis'
 import { gsap } from "gsap";
 export default {
   data() {
@@ -69,14 +69,11 @@ export default {
     // },
     animate(){
       const header = document.querySelector('header');
-      header.style.willChange = 'transform'; // Trigger hardware acceleration
-      requestAnimationFrame(() => {
         gsap.to(header, {
           y: 0,
           duration: 1,
           delay: 0.2
         });
-      })
     }
   },
 };
