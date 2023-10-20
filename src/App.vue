@@ -69,10 +69,13 @@ export default {
     },
     animate(){
       const header = document.querySelector('header');
-      gsap.to(header,{
-        y:0,
-        duration:1,
-        delay:.2
+      header.style.willChange = 'transform'; // Trigger hardware acceleration
+      requestAnimationFrame(() => {
+        gsap.to(header, {
+          y: 0,
+          duration: 1,
+          delay: 0.2
+        });
       })
     }
   },
