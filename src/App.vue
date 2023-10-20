@@ -17,7 +17,7 @@
 
 <script>
 import list from "@/projects.json"
-// import Lenis from '@studio-freight/lenis'
+import Lenis from '@studio-freight/lenis'
 import { gsap } from "gsap";
 export default {
   data() {
@@ -38,7 +38,7 @@ export default {
   mounted() {
     window.addEventListener("mousemove", this.updateCursor)
     document.addEventListener("click", this.scaleCursor)
-    // this.scrollSmooth()
+    this.scrollSmooth()
     this.animate()
   },
   methods: {
@@ -53,20 +53,20 @@ export default {
         cursor.classList.remove("cursor__expand")
       }, 500)
     },
-    // scrollSmooth(){
-    //   const lenis = new Lenis()
+    scrollSmooth(){
+      const lenis = new Lenis()
 
-    //     // lenis.on('scroll', (e) => {
-    //     //   console.log(e)
-    //     // })
+        // lenis.on('scroll', (e) => {
+        //   console.log(e)
+        // })
 
-    //     function raf(time) {
-    //       lenis.raf(time)
-    //       requestAnimationFrame(raf)
-    //     }
+        function raf(time) {
+          lenis.raf(time)
+          requestAnimationFrame(raf)
+        }
 
-    //     requestAnimationFrame(raf)
-    // },
+        requestAnimationFrame(raf)
+    },
     animate(){
       const header = document.querySelector('header');
         gsap.to(header, {
