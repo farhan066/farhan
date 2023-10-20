@@ -3,7 +3,7 @@ header{
     justify-content: space-between;
     padding: 20px;
     align-items: center;
-
+    transform: translateY(-100px);
     @include breakpoint-up(large){
     padding: 25px;
     }

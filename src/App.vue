@@ -69,8 +69,8 @@ export default {
     },
     animate(){
       const header = document.querySelector('header');
-      gsap.from(header,{
-        y:-100,
+      gsap.to(header,{
+        y:0,
         duration:1,
         delay:.2
       })

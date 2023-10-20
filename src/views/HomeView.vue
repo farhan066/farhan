@@ -3,7 +3,7 @@
     <!-- =======Intro====== -->
     <section id="intro">
       <div class="wrapper">
-        <div class="intro-head">
+        <div class="intro-head ">
           <span class="ta_up_clip">Inquisitive,</span>
           <span class="ta_up_clip">creative</span>
           <span class="ta_up_clip">explorer</span>
@@ -66,7 +66,7 @@ export default {
   },
   mounted() {
     this.animate()
-    ScrollTrigger.normalizeScroll(true); 
+    // ScrollTrigger.normalizeScroll(true); 
   },
   methods: {
     animate() {
@@ -80,14 +80,15 @@ export default {
         gsap.from(text.chars, {
           scrollTrigger: {
             trigger: char,
-            start: 'top 80%',
+            start: 'top 90%',
             end: 'top 20%',
             scrub: false,
             markers: false
           },
           delay:.05,
           stagger:.05,
-          y:100
+          y:100,
+          // ease: 'power4'
         })
       })
 
@@ -99,8 +100,8 @@ export default {
         gsap.from(text.chars,{
           scrollTrigger:{
             trigger: char,
-            start:'top 80%',
-            end: '10% 20%',
+            start:'top 70%',
+            end: 'bottom 70%',
             scrub:true,
             markers:false
           },
