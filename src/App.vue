@@ -10,15 +10,15 @@
     </nav>
   </header>
   <div class="cursor" :style="cursorStyle"></div>
-  <router-view 
-  :projects="projects" 
-  />
+  <router-view :projects="projects" />
 </template>
 
 <script>
 import list from "@/projects.json"
 import Lenis from '@studio-freight/lenis'
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 export default {
   data() {
     return {
@@ -40,6 +40,7 @@ export default {
     document.addEventListener("click", this.scaleCursor)
     this.scrollSmooth()
     this.animate()
+    this.gsapLenis()
   },
   methods: {
     updateCursor(e) {
@@ -53,27 +54,38 @@ export default {
         cursor.classList.remove("cursor__expand")
       }, 500)
     },
-    scrollSmooth(){
+    scrollSmooth() {
       const lenis = new Lenis()
 
-        // lenis.on('scroll', (e) => {
-        //   console.log(e)
-        // })
+      // lenis.on('scroll', (e) => {
+      //   console.log(e)
+      // })
 
-        function raf(time) {
-          lenis.raf(time)
-          requestAnimationFrame(raf)
-        }
-
+      function raf(time) {
+        lenis.raf(time)
         requestAnimationFrame(raf)
+      }
+
+      requestAnimationFrame(raf)
     },
-    animate(){
+    gsapLenis() {
+      const lenis = new Lenis()
+
+      lenis.on('scroll', ScrollTrigger.update)
+
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000)
+      })
+
+      gsap.ticker.lagSmoothing(0)
+    },
+    animate() {
       const header = document.querySelector('header');
-        gsap.to(header, {
-          y: 0,
-          duration: 1,
-          delay: 0.2
-        });
+      gsap.to(header, {
+        y: 0,
+        duration: 1,
+        delay: 0.2
+      });
     }
   },
 };
