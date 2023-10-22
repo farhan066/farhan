@@ -3,9 +3,16 @@ header{
     justify-content: space-between;
     padding: 20px;
     align-items: center;
-    // transform: translateY(-100px);
+    transform: translateY(-100px);
     @include breakpoint-up(large){
     padding: 25px;
+    }
+    animation: header 1s ease-out forwards;
+
+    @keyframes header {
+        to{
+            transform: translateY(0);
+        }
     }
 }
 .logo{

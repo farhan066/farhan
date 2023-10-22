@@ -81,16 +81,16 @@ export default {
       gsap.ticker.lagSmoothing(0)
     },
     animate() {
-      const tl = gsap.timeline()
-      tl.from("header",{
-        y:-100,
-        delay:.2,
-        duration:1
-      })
-      let mm = gsap.matchMedia();
-      mm.add("(max-width:500px)", () => {
-        ScrollTrigger.normalizeScroll(true);
-      })
+      // const tl = gsap.timeline()
+      // tl.from("header",{
+      //   y:-100,
+      //   delay:.2,
+      //   duration:1
+      // })
+      // let mm = gsap.matchMedia();
+      // mm.add("(max-width:500px)", () => {
+      //   ScrollTrigger.normalizeScroll(true);
+      // })
     }
   },
 };
