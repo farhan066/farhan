@@ -19,7 +19,6 @@ import Lenis from '@studio-freight/lenis'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
-ScrollTrigger.config({ ignoreMobileResize: true });
 export default {
   data() {
     return {
@@ -39,9 +38,10 @@ export default {
   mounted() {
     window.addEventListener("mousemove", this.updateCursor)
     document.addEventListener("click", this.scaleCursor)
-    this.scrollSmooth()
-    this.animate()
+    // this.scrollSmooth()
     this.gsapLenis()
+    ScrollTrigger.config({ ignoreMobileResize: true });
+    this.animate()
   },
   methods: {
     updateCursor(e) {
@@ -81,12 +81,16 @@ export default {
       gsap.ticker.lagSmoothing(0)
     },
     animate() {
-      const header = document.querySelector('header');
-      gsap.to(header, {
-        y: 0,
-        duration: 1,
-        delay: 0.2
-      });
+      const tl = gsap.timeline()
+      tl.from("header",{
+        y:-100,
+        delay:.2,
+        duration:1
+      })
+      let mm = gsap.matchMedia();
+      mm.add("(max-width:500px)", () => {
+        ScrollTrigger.normalizeScroll(true);
+      })
     }
   },
 };

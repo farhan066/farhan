@@ -121,7 +121,7 @@ export default {
             scrub:false,
             markers:false
           },
-          filter: 'blur(5px)',
+          opacity:.2,
           duration:.3
         })
       })
