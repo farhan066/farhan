@@ -66,7 +66,6 @@ export default {
   },
   mounted() {
     this.animate()
-    // ScrollTrigger.normalizeScroll(true); 
   },
   methods: {
     animate() {
@@ -87,8 +86,7 @@ export default {
           },
           delay:.05,
           stagger:.05,
-          y:100,
-          // ease: 'power4'
+          y:100
         })
       })
 
@@ -97,7 +95,10 @@ export default {
       splitTypes2.forEach((char) =>{
         const text = new SplitType(char, {types: 'chars, words'})
 
-        gsap.from(text.chars,{
+        gsap.fromTo(text.chars,{
+          opacity:.2
+        },
+        {
           scrollTrigger:{
             trigger: char,
             start:'top 70%',
@@ -105,7 +106,7 @@ export default {
             scrub:true,
             markers:false
           },
-          opacity:.2,
+          opacity:1,
           stagger:.1
         })
       })

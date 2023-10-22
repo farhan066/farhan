@@ -15,10 +15,11 @@
 
 <script>
 import list from "@/projects.json"
-import Lenis from '@studio-freight/lenis'
+import Lenis from "@studio-freight/lenis"
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+
 export default {
   data() {
     return {
@@ -40,8 +41,7 @@ export default {
     document.addEventListener("click", this.scaleCursor)
     // this.scrollSmooth()
     this.gsapLenis()
-    ScrollTrigger.config({ ignoreMobileResize: true });
-    this.animate()
+    // this.animate()
   },
   methods: {
     updateCursor(e) {
@@ -79,18 +79,6 @@ export default {
       })
 
       gsap.ticker.lagSmoothing(0)
-    },
-    animate() {
-      // const tl = gsap.timeline()
-      // tl.from("header",{
-      //   y:-100,
-      //   delay:.2,
-      //   duration:1
-      // })
-      // let mm = gsap.matchMedia();
-      // mm.add("(max-width:500px)", () => {
-      //   ScrollTrigger.normalizeScroll(true);
-      // })
     }
   },
 };
