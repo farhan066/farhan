@@ -12,6 +12,7 @@
             Dive into captivating articles, stories, and inspiration.
           </p>
         </div>
+        <img src="@/assets/img/scrolltext.svg" alt="Scroll Down" class="circle__text">
       </div>
     </section>
 
@@ -94,10 +95,7 @@ export default {
 
       splitTypes2.forEach((char) =>{
         const text = new SplitType(char, {types: 'chars, words'})
-
-        gsap.fromTo(text.chars,{
-          opacity:.2
-        },
+        gsap.to(text.chars,
         {
           scrollTrigger:{
             trigger: char,
