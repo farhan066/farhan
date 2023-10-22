@@ -9,7 +9,7 @@
       <div class="contact__footer">
         <ul class="contact__footer__links">
           <li><a href="#" ></a></li>
-            <li><a href="mailto:farhan06.contact@gmail.com" target="_blank" class="email ta_line_up">farhan06.contact@gmail.com <img class="arrow" src="@/assets/img/arrow.svg"/> </a></li>
+            <li><a href="mailto:farhan06.contact@gmail.com" target="_blank" class="email ta_line_up"> {{ email }}<img class="arrow" src="@/assets/img/arrow.svg"/> </a></li>
             <li><a href="https://behance.com/farhanahmad9" target="_blank">Behance</a></li>
             <li><a href="https://github.com/farhan066" target="_blank">Github</a></li>
             <li><a href="https://www.linkedin.com/in/farhan-ahmad-8194591b7" target="_blank">Linkedin</a></li>
@@ -27,7 +27,7 @@
 export default {
   data() {
     return {
-      email: 'farhan06.contact@gmail.com',
+      email: 'mail@farhannn.me',
       currentYear: new Date().getFullYear()
     }
   }
