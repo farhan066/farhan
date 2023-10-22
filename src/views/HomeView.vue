@@ -102,7 +102,7 @@ export default {
             start:'top 70%',
             end: 'bottom 70%',
             scrub:true,
-            markers:false
+            markers:true
           },
           opacity:1,
           stagger:.1
