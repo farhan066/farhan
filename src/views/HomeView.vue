@@ -101,7 +101,7 @@ export default {
             trigger: char,
             start:'top 70%',
             end: 'bottom 70%',
-            scrub:.5,
+            scrub:3,
             markers:true,
             toggleActions:'play none none none'
           },
