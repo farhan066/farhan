@@ -101,11 +101,13 @@ export default {
             trigger: char,
             start:'top 70%',
             end: 'bottom 70%',
-            scrub:true,
-            markers:true
+            scrub:.5,
+            markers:true,
+            toggleActions:'play none none none'
           },
           opacity:1,
-          stagger:.1
+          stagger:.1,
+          duration:.2
         })
       })
 

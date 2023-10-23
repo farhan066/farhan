@@ -39,8 +39,8 @@ export default {
   mounted() {
     window.addEventListener("mousemove", this.updateCursor)
     document.addEventListener("click", this.scaleCursor)
-    // this.scrollSmooth()
-    this.gsapLenis()
+    this.scrollSmooth()
+    // this.gsapLenis()
     // this.animate()
   },
   methods: {
@@ -56,11 +56,13 @@ export default {
       }, 500)
     },
     scrollSmooth() {
-      const lenis = new Lenis()
+      const lenis = new Lenis({
+        smoothTouch: true
+      })
 
-      // lenis.on('scroll', (e) => {
-      //   console.log(e)
-      // })
+      lenis.on('scroll', (e) => {
+        console.log(e)
+      })
 
       function raf(time) {
         lenis.raf(time)
@@ -70,15 +72,19 @@ export default {
       requestAnimationFrame(raf)
     },
     gsapLenis() {
-      const lenis = new Lenis()
+      const lenis = new Lenis({
+        smoothTouch: true
+      })
 
       lenis.on('scroll', ScrollTrigger.update)
 
       gsap.ticker.add((time) => {
         lenis.raf(time * 1000)
+        // requestAnimationFrame(raf)
       })
 
       gsap.ticker.lagSmoothing(0)
+      // requestAnimationFrame(raf)
     }
   },
 };
