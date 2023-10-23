@@ -15,7 +15,7 @@
 
 <script>
 import list from "@/projects.json"
-import Lenis from "@studio-freight/lenis"
+// import Lenis from "@studio-freight/lenis"
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -39,9 +39,10 @@ export default {
   mounted() {
     window.addEventListener("mousemove", this.updateCursor)
     document.addEventListener("click", this.scaleCursor)
-    this.scrollSmooth()
+    // this.scrollSmooth()
     // this.gsapLenis()
     // this.animate()
+    ScrollTrigger.config({ ignoreMobileResize: true });
   },
   methods: {
     updateCursor(e) {
@@ -55,37 +56,37 @@ export default {
         cursor.classList.remove("cursor__expand")
       }, 500)
     },
-    scrollSmooth() {
-      const lenis = new Lenis({
-        smoothTouch: true
-      })
+    // scrollSmooth() {
+    //   const lenis = new Lenis({
+    //     smoothTouch: true
+    //   })
 
-      lenis.on('scroll', (e) => {
-        console.log(e)
-      })
+    //   lenis.on('scroll', (e) => {
+    //     console.log(e)
+    //   })
 
-      function raf(time) {
-        lenis.raf(time)
-        requestAnimationFrame(raf)
-      }
+    //   function raf(time) {
+    //     lenis.raf(time)
+    //     requestAnimationFrame(raf)
+    //   }
 
-      requestAnimationFrame(raf)
-    },
-    gsapLenis() {
-      const lenis = new Lenis({
-        smoothTouch: true
-      })
+    //   requestAnimationFrame(raf)
+    // },
+    // gsapLenis() {
+    //   const lenis = new Lenis({
+    //     smoothTouch: true
+    //   })
 
-      lenis.on('scroll', ScrollTrigger.update)
+    //   lenis.on('scroll', ScrollTrigger.update)
 
-      gsap.ticker.add((time) => {
-        lenis.raf(time * 1000)
-        // requestAnimationFrame(raf)
-      })
+    //   gsap.ticker.add((time) => {
+    //     lenis.raf(time * 1000)
+    //     // requestAnimationFrame(raf)
+    //   })
 
-      gsap.ticker.lagSmoothing(0)
-      // requestAnimationFrame(raf)
-    }
+    //   gsap.ticker.lagSmoothing(0)
+    //   // requestAnimationFrame(raf)
+    // }
   },
 };
 

@@ -68,6 +68,7 @@ export default {
   },
   mounted() {
     this.animate()
+    
   },
   methods: {
     animate() {
@@ -103,7 +104,7 @@ export default {
                 trigger: char,
                 start: 'top 70%',
                 end: 'bottom 70%',
-                scrub: 2,
+                scrub: .5,
                 markers: false,
                 // toggleActions:'play none none none'
               },
