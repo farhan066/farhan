@@ -95,7 +95,7 @@ export default {
 
       splitTypes2.forEach((char) =>{
         const text = new SplitType(char, {types: 'chars, words'})
-        gsap.to(text.chars,
+        gsap.from(text.chars,
         {
           scrollTrigger:{
             trigger: char,
@@ -103,11 +103,11 @@ export default {
             end: 'bottom 70%',
             scrub:3,
             markers:true,
-            toggleActions:'play none none none'
+            // toggleActions:'play none none none'
           },
-          opacity:1,
-          stagger:.1,
-          duration:.2
+          opacity:.2,
+          stagger:.1
+          // duration:.2
         })
       })
 

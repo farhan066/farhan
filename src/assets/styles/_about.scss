@@ -17,9 +17,5 @@
 
   .about-text {
     @include standard-text;
-
-    .char{
-      opacity: .2;
-    }
   }
 }
