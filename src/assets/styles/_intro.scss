@@ -20,6 +20,9 @@
       left: calc(50% - 35px);
       animation: rotateCircle 7s linear infinite;
 
+      @include breakpoint-up(large){
+        left: 0;
+      }
       @keyframes rotateCircle {
         from{
           transform: rotate(0deg);
@@ -41,8 +44,15 @@
       font-weight: 500;
       line-height: $lh-1;
       letter-spacing: -6px;
-      // clip-path: polygon(0 0, 110% 0, 110% 100%, 0 100%);
-
+      white-space: nowrap;
+      // @keyframes marquee {
+      //   0%{
+      //     transform: translate(20%);
+      //   }
+      //   100%{
+      //     transform: translate(-20%);
+      //   }
+      // }
       &:nth-child(2) {
         margin-left: -90px;
 
@@ -68,7 +78,7 @@
       line-height: 1.1;
       @include breakpoint-up(large) {
         position: absolute;
-        left: -170px;
+        left: -175px;
         top: 147px;
         text-align: right;
         max-width: 250px;
