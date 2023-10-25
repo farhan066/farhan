@@ -15,7 +15,7 @@
             <li><a href="https://www.linkedin.com/in/farhan-ahmad-8194591b7" target="_blank">Linkedin</a></li>
             <li><a href="https://fb.com/farhanahmad06" target="_blank">Facebook</a></li>
         </ul>
-        <p class="contact__footer__copywrite">Designed and developed by me <br> ©{{ currentYear }} - All Rights Reserved</p>
+        <p class="contact__footer__copywrite">FARHAN WEB 3.0 || Designed and developed by me <br> ©{{ currentYear }} - All Rights Reserved</p>
       </div>
     </div>
     <!-- <p class="copyEmailAlert">Email Copied!</p> -->

@@ -5,22 +5,31 @@
     </div>
     <nav class="menu">
       <ul>
-        <li><a href="#projects" class="btn-cap">Projects</a></li>
+        <li><router-link to="/games" class="btn-cap">Games</router-link></li>
       </ul>
     </nav>
   </header>
+
   <div class="cursor" :style="cursorStyle"></div>
+
   <router-view :projects="projects" />
+
+ <!-- ===========contact============ -->
+ <ContactSection />
 </template>
 
 <script>
-import list from "@/projects.json"
-// import Lenis from "@studio-freight/lenis"
+import ContactSection from "./components/ContactSection.vue";
+import list from "@/data/projects.json"
+import Lenis from "@studio-freight/lenis"
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
+  components:{
+    ContactSection
+  },
   data() {
     return {
       projects: list,
@@ -40,8 +49,7 @@ export default {
     window.addEventListener("mousemove", this.updateCursor)
     document.addEventListener("click", this.scaleCursor)
     // this.scrollSmooth()
-    // this.gsapLenis()
-    // this.animate()
+    this.gsapLenis()
     ScrollTrigger.config({ ignoreMobileResize: true });
   },
   methods: {
@@ -56,37 +64,38 @@ export default {
         cursor.classList.remove("cursor__expand")
       }, 500)
     },
-    // scrollSmooth() {
-    //   const lenis = new Lenis({
-    //     smoothTouch: true
-    //   })
+    scrollSmooth() {
+      const lenis = new Lenis({
+        smoothTouch: true
+      })
 
-    //   lenis.on('scroll', (e) => {
-    //     console.log(e)
-    //   })
+      lenis.on('scroll', (e) => {
+        console.log(e)
+      })
 
-    //   function raf(time) {
-    //     lenis.raf(time)
-    //     requestAnimationFrame(raf)
-    //   }
+      function raf(time) {
+        lenis.raf(time)
+        requestAnimationFrame(raf)
+      }
 
-    //   requestAnimationFrame(raf)
-    // },
-    // gsapLenis() {
-    //   const lenis = new Lenis({
-    //     smoothTouch: true
-    //   })
+      requestAnimationFrame(raf)
 
-    //   lenis.on('scroll', ScrollTrigger.update)
+    },
+    gsapLenis() {
+      const lenis = new Lenis({
+        smoothTouch: true
+      })
 
-    //   gsap.ticker.add((time) => {
-    //     lenis.raf(time * 1000)
-    //     // requestAnimationFrame(raf)
-    //   })
+      lenis.on('scroll', ScrollTrigger.update)
 
-    //   gsap.ticker.lagSmoothing(0)
-    //   // requestAnimationFrame(raf)
-    // }
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000)
+        // requestAnimationFrame(raf)
+      })
+
+      gsap.ticker.lagSmoothing(0)
+      // requestAnimationFrame(raf)
+    }
   },
 };
 

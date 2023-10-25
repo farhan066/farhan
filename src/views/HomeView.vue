@@ -43,15 +43,11 @@
       </div>
     </section>
 
-    <!-- ===========contact============ -->
-    <ContactSection />
-
   </div>
 </template>
 
 <script>
 import ProjectCard from "@/components/ProjectCard.vue"
-import ContactSection from "@/components/ContactSection.vue"
 
 //Animations
 import { gsap } from "gsap";
@@ -63,8 +59,7 @@ import SplitType from 'split-type'
 export default {
   props: ["projects"],
   components: {
-    ProjectCard,
-    ContactSection
+    ProjectCard
   },
   mounted() {
     this.animate()

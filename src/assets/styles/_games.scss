@@ -1,0 +1,68 @@
+#games{
+    margin-top: 30px;
+
+    .games_head{
+        line-height: 1;
+        @include standard-text;
+        margin-bottom: 60px;
+        @include breakpoint-up(medium){
+            @include big-text;
+            font-weight: 500;
+        }
+    }
+    .wrapper{
+        display: grid;
+        grid-gap: 20px;
+
+        @include breakpoint-up(medium){
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include breakpoint-up(large){
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    .game_card{
+        background-color: $black-2;
+        padding: 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        
+        .img{
+            border-radius: 3px;
+            aspect-ratio: 2 / 1.5;
+            margin-bottom: 20px;
+            overflow: hidden;
+
+            img{
+                transition: .3s;
+                height: 100%;
+                object-fit: cover;
+
+                &:hover {
+                    scale: 1.1;
+                }
+            }
+        }
+
+        .details{
+            min-height: 100px;
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            .title{
+                @include standard-text;
+                text-transform: uppercase;
+                line-height: 1;
+                margin-bottom: 10px;
+            }
+            .desc{
+                font-size: var(--font-sml);
+            }
+            .author{
+                font-size: var(--font-xsml);
+                a{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
