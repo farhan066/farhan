@@ -1,22 +1,22 @@
 [
   {
     "id": 1,
-    "img": "game1.png",
-    "title": "Fruit Ninja",
-    "desc": "You will love to hate it!",
-    "author": "Farhan",
-    "authorLink": "https://Farhannn.me",
+    "img": "https://www.edopedia.com/blog/wp-content/uploads/2018/04/BreakLock_700.jpg?ezimgfmt=ng:webp/ngcb4",
+    "title": "Breaklock",
+    "desc": "A game you gonna love to hate.",
+    "author": "Marc López Ávila",
+    "authorLink": "https://codepen.io/Loopez10",
     "iframe": "https://maxwellito.github.io/breaklock/"
   },
 
   {
     "id": 2,
     "img": "game1.png",
-    "title": "Fruit Ninja",
+    "title": "Tower Blocks",
     "desc": "You will love to hate it!",
-    "author": "Farhan",
-    "authorLink": "https://Farhannn.me",
-    "iframe": "https://maxwellito.github.io/breaklock/"
+    "author": "Steve Gardner",
+    "authorLink": "https://codepen.io/ste-vg",
+    "iframe": "https://codepen.io/ste-vg/full/ppLQNW"
   },
 
   {

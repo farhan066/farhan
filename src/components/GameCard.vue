@@ -1,7 +1,7 @@
 <template>
     <div class="game_card">
-            <div class="img">
-            <img :src="require(`@/assets/img/${game.img}`)" :alt="game.title">
+        <div class="img">
+            <img :src="game.img" :alt="game.title" @click="selectGame(game)">
         </div>
         <div class="details">
             <h2 class="title">{{ game.title }}</h2>
@@ -13,7 +13,17 @@
 
 <script>
 
-export default{
-    props:['game']
+export default {
+    props: ['game'],
+    data() {
+        return {
+            selectedGame: null
+        }
+    },
+    methods: {
+        selectGame() {
+            this.$emit('game-selected', this.game.iframe);
+        }
+    }
 }
 </script>
