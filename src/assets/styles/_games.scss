@@ -45,9 +45,8 @@
         }
 
         .details{
-            min-height: 100px;
-            display: grid;
-            grid-template-rows: 1fr 1fr;
+            min-height: 150px;
+            position: relative;
             .title{
                 @include standard-text;
                 text-transform: uppercase;
@@ -59,6 +58,9 @@
             }
             .author{
                 font-size: var(--font-xsml);
+                position: absolute;
+                bottom: 0;
+                left: 0;
                 a{
                     text-decoration: underline;
                 }
@@ -68,16 +70,28 @@
 }
 
 .game_frame{
-    width: 100vw;
-    min-height: 100vh;
-    button{
+    width: 100%;
+    background-color: $white;
+    min-height: 120vh;
+    padding: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 999;
+    .game_frame_close{
         position: absolute;
-        top: 20px;
-        right: 20px;
+        top: 30px;
+        right: 30px;
+        background-color: $white;
+        color: $black-1;
+        border: 1px solid $black-1;
+        cursor: pointer;
     }
     iframe{
         min-height: 100vh;
         width: 100%;
+        border-radius: 10px;
 
         header{
             display: none !important;

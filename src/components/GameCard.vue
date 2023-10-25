@@ -1,7 +1,7 @@
 <template>
     <div class="game_card">
         <div class="img">
-            <img :src="game.img" :alt="game.title" @click="selectGame(game)">
+            <img :src="game.img" :alt="game.title" @click="selectGame()">
         </div>
         <div class="details">
             <h2 class="title">{{ game.title }}</h2>
@@ -16,9 +16,7 @@
 export default {
     props: ['game'],
     data() {
-        return {
-            selectedGame: null
-        }
+
     },
     methods: {
         selectGame() {

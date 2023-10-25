@@ -3,29 +3,54 @@
     "id": 1,
     "img": "https://www.edopedia.com/blog/wp-content/uploads/2018/04/BreakLock_700.jpg?ezimgfmt=ng:webp/ngcb4",
     "title": "Breaklock",
-    "desc": "A game you gonna love to hate.",
-    "author": "Marc López Ávila",
-    "authorLink": "https://codepen.io/Loopez10",
+    "desc": "Can you break the lock?",
+    "author": "Maxwellito",
+    "authorLink": "https://github.com/maxwellito",
     "iframe": "https://maxwellito.github.io/breaklock/"
   },
-
   {
     "id": 2,
-    "img": "game1.png",
-    "title": "Tower Blocks",
-    "desc": "You will love to hate it!",
-    "author": "Steve Gardner",
-    "authorLink": "https://codepen.io/ste-vg",
-    "iframe": "https://codepen.io/ste-vg/full/ppLQNW"
+    "img": "https://bsehovac.github.io/the-cube/assets/icons/meta-image.png",
+    "title": "The Cube",
+    "desc": "I bet you can't solve it faster then me!",
+    "author": "Boris Šehovac",
+    "authorLink": "https://codepen.io/bsehovac",
+    "iframe": "https://codepen.io/bsehovac/full/EMyWVv"
   },
-
   {
     "id": 3,
-    "img": "game1.png",
-    "title": "Fruit Ninja",
-    "desc": "You will love to hate it!",
+    "img": "https://www.edopedia.com/blog/wp-content/uploads/2018/04/HexGL_700.jpg?ezimgfmt=ng:webp/ngcb4",
+    "title": "HexGL (Desktop)",
+    "desc": "Futuristic racing game. You're gonna love this!",
+    "author": "BKcore",
+    "authorLink": "https://github.com/BKcore",
+    "iframe": "http://hexgl.bkcore.com/play/"
+  },
+  {
+    "id": 4,
+    "img": "https://assets.codepen.io/329180/internal/screenshots/pens/BexBbE.custom.jpg?version=1560316711",
+    "title": "Menja",
+    "desc": "Have you ever played fruit ninja?",
+    "author": "Caleb Miller",
+    "authorLink": "https://codepen.io/MillerTime",
+    "iframe": "https://codepen.io/MillerTime/embed/BexBbE?default-tab=&theme-id=dark"
+  },
+  {
+    "id": 5,
+    "img": "https://www.wikihow.com/images/0/06/Play-Chess-Step-28-Version-5.jpg",
+    "title": "AI Chess",
+    "desc": "Beat the AI!",
+    "author": "Jake",
+    "authorLink": "https://codepen.io/jak_e",
+    "iframe": "https://codepen.io/jak_e/embed/JjRGQPY?default-tab=result&theme-id=dark"
+  },
+  {
+    "id": 6,
+    "img": "https://www.coolmathgames.com//sites/default/files/TicTacToe_OG-logo.jpg",
+    "title": "Tic Tac Toe",
+    "desc": "Also knows as Noughts and Crosses.",
     "author": "Farhan",
-    "authorLink": "https://Farhannn.me",
-    "iframe": "https://maxwellito.github.io/breaklock/"
+    "authorLink": "https://github.com/farhan066",
+    "iframe": "https://f-tictactoe.netlify.app/"
   }
 ]

@@ -99,13 +99,12 @@ export default {
                 trigger: char,
                 start: 'top 70%',
                 end: 'bottom 70%',
-                scrub: .5,
-                markers: false,
-                // toggleActions:'play none none none'
+                scrub: 1.5,
+                markers: false
               },
               opacity: .2,
-              stagger: .1
-              // duration:.2
+              stagger: .1,
+              duration:.2
             })
         })
 
