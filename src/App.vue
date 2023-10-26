@@ -71,7 +71,8 @@ export default {
     },
     scrollSmooth() {
       const lenis = new Lenis({
-        smoothTouch: true
+        smoothTouch: true,
+        duration:.8
       })
 
       lenis.on('scroll', (e) => {

@@ -110,9 +110,11 @@
     font-size: var(--font-xsml);
     border-radius: 5px;
     position: absolute;
-    transform: translate(-50%,-130px); 
+    top: 30px;
+    transform: translate(-50%,-200px); 
     left: 50%;
     transition: .3s;
+    z-index: 1000;
     &_show{
         transform: translate(-50%,30px); 
     }    
