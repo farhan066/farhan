@@ -72,9 +72,9 @@
 .game_frame{
     width: 100%;
     background-color: $white;
-    min-height: 120vh;
-    padding: 15px;
-    position: absolute;
+    height: 100vh;
+    padding: 10px;
+    position: fixed;
     top: 0;
     left: 0;
     overflow: hidden;
@@ -83,13 +83,19 @@
         position: absolute;
         top: 30px;
         right: 30px;
+        font-weight: 500;
         background-color: $white;
         color: $black-1;
-        border: 1px solid $black-1;
+        border: 2px solid $black-1;
         cursor: pointer;
+        transition: .3s;
+
+        &:hover{
+            opacity: .8;
+        }
     }
     iframe{
-        min-height: 100vh;
+        min-height: 100%;
         width: 100%;
         border-radius: 10px;
 
@@ -97,4 +103,17 @@
             display: none !important;
         }
     }
+}
+.game_loading{
+    background-color: $black-2;
+    padding: 8px 15px;
+    font-size: var(--font-xsml);
+    border-radius: 5px;
+    position: absolute;
+    transform: translate(-50%,-130px); 
+    left: 50%;
+    transition: .3s;
+    &_show{
+        transform: translate(-50%,30px); 
+    }    
 }

@@ -58,7 +58,6 @@ section:first-child {
   border-radius: 1000px;
   transition: 0.3s;
   font-weight: 400;
-  border: 1px solid $white;
 
   &:hover {
     background-color: $white;
@@ -152,3 +151,14 @@ section:first-child {
   .lenis.lenis-scrolling iframe {
     pointer-events: none;
   }
+
+  .page-enter-active,
+.page-leave-active {
+    transition: opacity 1s ease-out;
+}
+
+.page-leave-to,
+.page-enter-from {
+    opacity: 0;
+    
+}

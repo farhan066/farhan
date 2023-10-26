@@ -19,12 +19,12 @@
   },
   {
     "id": 3,
-    "img": "https://www.edopedia.com/blog/wp-content/uploads/2018/04/HexGL_700.jpg?ezimgfmt=ng:webp/ngcb4",
-    "title": "HexGL (Desktop)",
-    "desc": "Futuristic racing game. You're gonna love this!",
-    "author": "BKcore",
-    "authorLink": "https://github.com/BKcore",
-    "iframe": "http://hexgl.bkcore.com/play/"
+    "img": "https://freefrontend.com/assets/img/three-js-games/Three-JS-Tower-Blocks.png",
+    "title": "Tower Blocks",
+    "desc": "Classic!",
+    "author": "Steve Gardner",
+    "authorLink": "https://codepen.io/ste-vg",
+    "iframe": "https://codepen.io/ste-vg/embed/ppLQNW?default-tab=result&theme-id=dark"
   },
   {
     "id": 4,

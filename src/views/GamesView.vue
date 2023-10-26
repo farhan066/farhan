@@ -1,14 +1,17 @@
 <template>
-    <section id="games" v-if="!isGameLoaded">
-        <h1 class="games_head">Enjoy instant <br /> gaming fun.</h1>
-        <div class="wrapper">
-            <GameCard v-for="(game, i) in gamesList" :game="game" :key="game.id" :index="i" @game-selected="loadGame" />
-        </div>
-    </section>
+    <div id="game_main">
+        <section id="games" v-if="!isGameLoaded">
+            <h1 class="games_head">Enjoy instant <br /> gaming fun.</h1>
+            <div class="wrapper">
+                <GameCard v-for="(game, i) in gamesList" :game="game" :key="game.id" :index="i" @game-selected="loadGame" />
+            </div>
+        </section>
 
-    <div v-else class="game_frame">
-        <iframe :src="currentGameUrl" frameborder="0" allowfullscreen="true" id="game_iframe"></iframe>
-        <button v-if="isGameLoaded" @click="goBack" class="game_frame_close btn-cap">Close</button>
+        <div v-else class="game_frame">
+            <iframe :src="currentGameUrl" frameborder="0" allowfullscreen="true" id="game_iframe"></iframe>
+            <button v-if="isGameLoaded" @click="goBack" class="game_frame_close btn-cap">Close</button>
+        </div>
+        <p class="game_loading">Game Loading...</p>
     </div>
 </template>
 
@@ -31,6 +34,8 @@ export default {
         loadGame(url) {
             this.currentGameUrl = url;
             this.isGameLoaded = true;
+            const gameLoading = document.querySelector(".game_loading")
+            gameLoading.classList.add("game_loading_show")
         },
         goBack() {
             this.currentGameUrl = '';

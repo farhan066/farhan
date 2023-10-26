@@ -1,0 +1,16 @@
+#blogList{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    margin-top: 50px;
+    h1{
+        @include big-text;
+        color: $grey ;
+        text-transform: uppercase;
+    }
+    p{
+        font-size: var(--font-sml);
+        margin-top: 10px;
+        color: $grey ;
+    }
+}

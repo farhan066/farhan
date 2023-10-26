@@ -5,17 +5,22 @@
     </div>
     <nav class="menu">
       <ul>
+        <li><router-link to="/" class="btn-cap">Home</router-link></li>
         <li><router-link to="/games" class="btn-cap">Games</router-link></li>
+        <li><router-link to="/blog" class="btn-cap">Blog</router-link></li>
       </ul>
     </nav>
   </header>
 
   <div class="cursor" :style="cursorStyle"></div>
 
-  <router-view :projects="projects" />
+  <Transition name="page" mode="out-in" >
+    <router-view :projects="projects" />
+  </Transition>
 
  <!-- ===========contact============ -->
  <ContactSection />
+
 </template>
 
 <script>
@@ -25,6 +30,7 @@ import Lenis from "@studio-freight/lenis"
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.config({ ignoreMobileResize: true });
 
 export default {
   components:{
@@ -48,9 +54,8 @@ export default {
   mounted() {
     window.addEventListener("mousemove", this.updateCursor)
     document.addEventListener("click", this.scaleCursor)
-    // this.scrollSmooth()
-    this.gsapLenis()
-    ScrollTrigger.config({ ignoreMobileResize: true });
+    this.scrollSmooth()
+    // this.gsapLenis()
   },
   methods: {
     updateCursor(e) {
@@ -80,22 +85,8 @@ export default {
 
       requestAnimationFrame(raf)
 
-    },
-    gsapLenis() {
-      const lenis = new Lenis({
-        smoothTouch: true
-      })
-
-      lenis.on('scroll', ScrollTrigger.update)
-
-      gsap.ticker.add((time) => {
-        lenis.raf(time * 1000)
-        // requestAnimationFrame(raf)
-      })
-
-      gsap.ticker.lagSmoothing(0)
-      // requestAnimationFrame(raf)
     }
+    
   },
 };
 
