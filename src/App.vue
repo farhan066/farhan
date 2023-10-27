@@ -10,7 +10,7 @@
   <nav :class="['sidebar', { 'sidebar_show': showSidebar }]">
     <button class="nav_btn" @click="openSidebar"><img src="@/assets/img/close-icon.svg" alt="" class="close_icon"></button>
     <ul class="page_links">
-      <li class="active"><router-link to="/">Home</router-link></li>
+      <li><router-link to="/">Home</router-link></li>
       <li><router-link to="/games">Web Fun</router-link></li>
       <li><router-link to="/blog">Blog</router-link></li>
     </ul>
