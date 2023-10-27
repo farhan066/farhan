@@ -1,5 +1,5 @@
 <template>
-    <div id="game_main">
+    <div class="games">
         <section id="games" v-if="!isGameLoaded">
             <h1 class="games_head">Enjoy instant <br /> gaming fun.</h1>
             <div class="wrapper">

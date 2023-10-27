@@ -29,7 +29,9 @@ li {
 a {
   text-decoration: none;
 }
-
+button, a{
+  cursor: pointer;
+}
 .flex {
   display: flex;
 }

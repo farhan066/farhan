@@ -3,14 +3,18 @@
     <div class="logo">
       <a href="/"><img src="./assets/img/logo.png" alt="Farhan Logo"></a>
     </div>
-    <nav class="menu">
-      <ul>
-        <li><router-link to="/" class="btn-cap">Home</router-link></li>
-        <li><router-link to="/games" class="btn-cap">Games</router-link></li>
-        <li><router-link to="/blog" class="btn-cap">Blog</router-link></li>
-      </ul>
-    </nav>
+
+    <button class="nav_btn" @click="openSidebar"><img src="@/assets/img/nav-icon.svg" alt="" class="nav_icon"></button>
+
   </header>
+  <nav :class="['sidebar', { 'sidebar_show': showSidebar }]">
+    <button class="nav_btn" @click="openSidebar"><img src="@/assets/img/close-icon.svg" alt="" class="close_icon"></button>
+    <ul class="page_links">
+      <li class="active"><router-link to="/">Home</router-link></li>
+      <li><router-link to="/games">Web Fun</router-link></li>
+      <li><router-link to="/blog">Blog</router-link></li>
+    </ul>
+  </nav>
 
   <div class="cursor" :style="cursorStyle"></div>
 
@@ -41,13 +45,14 @@ export default {
       projects: list,
       cursorX: 0,
       cursorY: 0,
+      showSidebar: false
     }
   },
   computed: {
     cursorStyle() {
       return {
         top: this.cursorY + 'px',
-        left: this.cursorX + 'px',
+        left: this.cursorX + 'px'
       };
     },
   },
@@ -55,12 +60,14 @@ export default {
     window.addEventListener("mousemove", this.updateCursor)
     document.addEventListener("click", this.scaleCursor)
     this.scrollSmooth()
-    // this.gsapLenis()
   },
   methods: {
     updateCursor(e) {
       this.cursorX = e.pageX;
       this.cursorY = e.pageY;
+    },
+    openSidebar(){
+      this.showSidebar = !this.showSidebar
     },
     scaleCursor() {
       const cursor = document.querySelector('.cursor')
@@ -72,7 +79,8 @@ export default {
     scrollSmooth() {
       const lenis = new Lenis({
         smoothTouch: true,
-        duration:.8
+        duration:1,
+        touchMultiplier:1
       })
 
       lenis.on('scroll', (e) => {

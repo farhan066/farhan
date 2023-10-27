@@ -1,32 +1,74 @@
-header{
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    align-items: center;
-    transform: translateY(-100px);
-    @include breakpoint-up(large){
-    padding: 25px;
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+  transform: translateY(-100px);
+  animation: header 1s ease-out forwards;
+  
+  @keyframes header {
+    to {
+      transform: translateY(0);
     }
-    animation: header 1s ease-out forwards;
-
-    @keyframes header {
-        to{
-            transform: translateY(0);
-        }
-    }
-}
-.logo{
+  }
+  .logo {
     width: 90px;
     cursor: pointer;
-}
-nav ul{
-    display: flex;
+  }
+  @include breakpoint-up(large) {
+    padding: 25px;
+  }
 
-    li{
-        margin-right: 20px;
-        &:last-child{
-            margin-right: 0;
-        }
+}
+.nav_btn {
+  background: none;
+  border: none;
+  width: 25px;
+}
+// =======SIDEBAR=======
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100vh;
+  background-color: $white;
+  padding: 30px;
+  z-index: 1000;
+  transition: .5s ease-out;
+  &_show{
+    left: 0;
+  }
+  .nav_btn {
+    margin-left: auto;
+    display: block;
+  }
+  * {
+    color: $black-1;
+  }
+  ul {
+    margin-top: 50px;
+  }
+  a {
+    @include standard-text;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      background-color: $black-1;
+      width: 100%;
+      height: 2px;
+      margin-left: 20px;
+      display: none;
     }
+    &.router-link-active::after{
+      display: inline;
+    }
+  }
 }
-
