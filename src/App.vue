@@ -59,7 +59,7 @@ export default {
   mounted() {
     window.addEventListener("mousemove", this.updateCursor)
     document.addEventListener("click", this.scaleCursor)
-    this.scrollSmooth()
+    // this.scrollSmooth()
   },
   methods: {
     updateCursor(e) {
