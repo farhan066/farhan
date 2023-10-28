@@ -59,7 +59,7 @@ export default {
   mounted() {
     window.addEventListener("mousemove", this.updateCursor)
     document.addEventListener("click", this.scaleCursor)
-    // this.scrollSmooth()
+    this.scrollSmooth()
   },
   methods: {
     updateCursor(e) {
@@ -79,7 +79,8 @@ export default {
     scrollSmooth() {
       const lenis = new Lenis({
         smoothTouch: true,
-        touchMultiplier:3
+        lerp:.05,
+        syncTouch:true
       })
 
       lenis.on('scroll', (e) => {
