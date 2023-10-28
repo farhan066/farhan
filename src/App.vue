@@ -4,32 +4,42 @@
       <a href="/"><img src="./assets/img/logo.png" alt="Farhan Logo"></a>
     </div>
 
-    <button class="nav_btn" @click="openSidebar"><img src="@/assets/img/nav-icon.svg" alt="" class="nav_icon"></button>
+    <button class="nav_btn" @click="toggleSidebar"><img src="@/assets/img/nav-icon.svg" alt="" class="nav_icon"></button>
 
   </header>
+
   <nav :class="['sidebar', { 'sidebar_show': showSidebar }]">
-    <button class="nav_btn" @click="openSidebar"><img src="@/assets/img/close-icon.svg" alt="" class="close_icon"></button>
-    <ul class="page_links">
+    <button class="nav_btn" @click="toggleSidebar"><img src="@/assets/img/close-icon.svg" alt=""
+        class="close_icon"></button>
+    <ul class="page_links" @click="toggleSidebar">
       <li><router-link to="/">Home</router-link></li>
       <li><router-link to="/games">Web Fun</router-link></li>
       <li><router-link to="/blog">Blog</router-link></li>
     </ul>
   </nav>
-
+  <div class="props">
+    <div class=""></div>
+    <div class=""></div>
+  </div>
   <div class="cursor" :style="cursorStyle"></div>
 
-  <Transition name="page" mode="out-in" >
-    <router-view :projects="projects" />
-  </Transition>
+  <!-- <div v-if="isLoading" class="loading_screen">
+  </div> -->
+  <main>
+    <Transition name="page" mode="out-in">
+      <router-view :projects="projects" />
+    </Transition>
+  </main>
 
- <!-- ===========contact============ -->
- <ContactSection />
-
+  <!-- ===========contact============ -->
+  <ContactSection />
 </template>
 
 <script>
 import ContactSection from "./components/ContactSection.vue";
+
 import list from "@/data/projects.json"
+
 import Lenis from "@studio-freight/lenis"
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -37,7 +47,7 @@ gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.config({ ignoreMobileResize: true });
 
 export default {
-  components:{
+  components: {
     ContactSection
   },
   data() {
@@ -45,7 +55,8 @@ export default {
       projects: list,
       cursorX: 0,
       cursorY: 0,
-      showSidebar: false
+      showSidebar: false,
+      isLoading: true
     }
   },
   computed: {
@@ -59,15 +70,23 @@ export default {
   mounted() {
     window.addEventListener("mousemove", this.updateCursor)
     document.addEventListener("click", this.scaleCursor)
+    document.addEventListener("scroll", this.closeSidebar)
     this.scrollSmooth()
+
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 2000);
   },
   methods: {
     updateCursor(e) {
       this.cursorX = e.pageX;
       this.cursorY = e.pageY;
     },
-    openSidebar(){
+    toggleSidebar() {
       this.showSidebar = !this.showSidebar
+    },
+    closeSidebar() {
+      this.showSidebar = false
     },
     scaleCursor() {
       const cursor = document.querySelector('.cursor')
@@ -91,7 +110,7 @@ export default {
       requestAnimationFrame(raf)
 
     }
-    
+
   },
 };
 

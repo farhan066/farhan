@@ -10,12 +10,24 @@
       width: 80px;
       height: 80px;
       object-fit: cover;
-      border-radius: 50%;
       cursor: pointer;
+      position: relative;
+      transition: .3s;
+
+      &:hover{
+        opacity: .7;
+      }
+      img{
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      
     }
   }
 
   .about-text {
     @include standard-text;
+   
   }
 }

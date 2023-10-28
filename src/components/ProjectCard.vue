@@ -1,7 +1,7 @@
 <template>
     <div class="card">
        <div class="card-text">
-        <h2 class="card-title">{{ pro.title }}</h2>
+        <h2 class="card-title ta_clip">{{ pro.title }}</h2>
         <p class="card-subtitle">{{ pro.tools }}</p>
        </div>
        <div class="card-img">

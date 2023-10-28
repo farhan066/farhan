@@ -4,7 +4,7 @@
 
   .wrapper {
     border-radius: 20px;
-    min-height: calc(100vh - 90px); //removing the h of header
+    min-height: calc(100vh - 90px); 
     padding: 20px;
     display: flex;
     align-items: center;
@@ -44,14 +44,6 @@
       line-height: $lh-1;
       letter-spacing: -6px;
       white-space: nowrap;
-      // @keyframes marquee {
-      //   0%{
-      //     transform: translate(20%);
-      //   }
-      //   100%{
-      //     transform: translate(-20%);
-      //   }
-      // }
       &:nth-child(2) {
         margin-left: -90px;
 
@@ -85,4 +77,9 @@
     }
   }
   
+}
+
+.ta_clip{
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  transform: translateY(60px);
 }

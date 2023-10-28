@@ -1,12 +1,13 @@
 <template>
   <div class="home">
+
     <!-- =======Intro====== -->
     <section id="intro">
       <div class="wrapper">
-        <div class="intro-head ">
-          <span class="ta_up_clip">Inquisitive</span>
-          <span class="ta_up_clip">creative</span>
-          <span class="ta_up_clip">explorer</span>
+        <div class="intro-head">
+          <span class="ta_clip">Inquisitive</span>
+          <span class="ta_clip">creative</span>
+          <span class="ta_clip">explorer</span>
           <p class="intro-p">
             Explore a world of curiosity and exploration.
             Dive into captivating articles, stories, and inspiration.
@@ -19,7 +20,7 @@
     <!-- ========About======= -->
     <section id="short-about">
       <div class="about-head">
-        <img src="@/assets/img/farhan.webp" class="circle-photo" alt="Farhan">
+        <div class="circle-photo"><img src="@/assets/img/farhan.webp" alt="Farhan"></div>
         <a href="#" class="btn-cir">More <br> About Me</a>
       </div>
       <div class="about-text">
@@ -63,69 +64,86 @@ export default {
   },
   mounted() {
     this.animate()
-    
+
   },
   methods: {
     animate() {
-      // const all = gsap.context(() => {
-        let splitTypes = document.querySelectorAll(".ta_up_clip");
-        splitTypes.forEach((char) => {
+      let texts = document.querySelectorAll('.ta_clip')
 
-          const text = new SplitType(char, { types: 'chars, words' })
-          text.words.forEach((word) => {
-            word.classList.add('clipText')
-          })
-          gsap.from(text.chars, {
+      texts.forEach((text) => {
+        gsap.to(text, {
+          scrollTrigger: {
+            trigger: text,
+            start: 'top 90%',
+            end: 'top 20%',
+            scrub: false,
+            // markers: true
+          },
+          clipPath: 'polygon(0% 100%, 110% 100%, 110% 0%, 0% 0%)',
+          y: 0,
+          stagger: 0.1,
+          duration: 0.5,
+          delay: 0.2
+        })
+      })
+
+    
+
+      // let splitTypes = document.querySelectorAll(".ta_up_clip");
+      // splitTypes.forEach((char) => {
+
+      //   const text = new SplitType(char, { types: 'chars, words' })
+      //   text.words.forEach((word) => {
+      //     word.classList.add('clipText')
+      //   })
+      //   gsap.from(text.chars, {
+      //     scrollTrigger: {
+      //       trigger: char,
+      //       start: 'top 90%',
+      //       end: 'top 20%',
+      //       scrub: false,
+      //       markers: false
+      //     },
+      //     delay: .05,
+      //     stagger: .05,
+      //     y: 100
+      //   })
+      // })
+
+      let splitTypes2 = document.querySelectorAll('.ta_opacity');
+
+      splitTypes2.forEach((char) => {
+        const text = new SplitType(char, { types: 'chars, words' })
+        gsap.from(text.chars,
+          {
             scrollTrigger: {
               trigger: char,
-              start: 'top 90%',
-              end: 'top 20%',
-              scrub: false,
-              markers: false
-            },
-            delay: .05,
-            stagger: .05,
-            y: 100
-          })
-        })
-
-        let splitTypes2 = document.querySelectorAll('.ta_opacity');
-
-        splitTypes2.forEach((char) => {
-          const text = new SplitType(char, { types: 'chars, words' })
-          gsap.fromTo(text.chars,
-          {
-            opacity: .2
-          },
-            {
-              scrollTrigger: {
-                trigger: char,
-                start: 'top 70%',
-                end: 'bottom 70%',
-                scrub: 1.5,
-                markers: false
-              },
-              opacity: 1,
-              stagger: .1,
-              duration:.2
-            })
-        })
-
-        let blurEl = document.querySelectorAll(".a_blur")
-
-        blurEl.forEach((el) => {
-          gsap.from(el, {
-            scrollTrigger: {
-              trigger: el,
-              start: 'top 80%',
-              end: 'top 20%',
-              scrub: false,
+              start: 'top 70%',
+              end: 'bottom 70%',
+              scrub: 1.5,
               markers: false
             },
             opacity: .2,
-            duration: .3
+            stagger: .1,
+            duration: .2
           })
+      })
+
+      let blurEl = document.querySelectorAll(".a_blur")
+
+      blurEl.forEach((el) => {
+        gsap.from(el, {
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 80%',
+            end: 'top 20%',
+            scrub: false,
+            markers: false
+          },
+          opacity: .2,
+          duration: .3
         })
+      })
       // })
     },
 

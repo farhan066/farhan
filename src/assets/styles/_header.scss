@@ -37,18 +37,32 @@ header {
   background-color: $white;
   padding: 30px;
   z-index: 1000;
-  transition: right .8s cubic-bezier(0.54, 0.02, 0.14, 1);
-
+  transition: right .6s cubic-bezier(0.54, 0.02, 0.14, 1);
+  
   @include breakpoint-up(large){
     right: -400px;
     max-width: 400px;
   }
   &_show{
     right: 0;
+
+    ul a{
+      transform: translate(0);
+      transition-delay: .5s;
+    }
+    &::before{
+      content: '';
+      width: 100vw;
+      height: 100%;
+      position: absolute; right: 100%; top: 0;
+      background-color: #00000065;
+      z-index: -100;
+    }
   }
   .nav_btn {
     margin-left: auto;
     display: block;
+    width: 40px;
   }
   * {
     color: $black-1;
@@ -62,7 +76,8 @@ header {
     display: block;
     margin-bottom: 10px;
     position: relative;
-    transition: opacity .3s;
+    transition: .3s;
+    transform: translateX(20px);
     &:hover:not(.router-link-active){
       opacity: .6;
     }

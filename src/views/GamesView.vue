@@ -11,7 +11,7 @@
             <iframe :src="currentGameUrl" frameborder="0" allowfullscreen="true" id="game_iframe"></iframe>
             <button v-if="isGameLoaded" @click="goBack" class="game_frame_close btn-cap">Close</button>
         </div>
-        <p class="game_loading">Game Loading...</p>
+        <p class="game_loading">Preparing...</p>
     </div>
 </template>
 
@@ -36,6 +36,10 @@ export default {
             this.isGameLoaded = true;
             const gameLoading = document.querySelector(".game_loading")
             gameLoading.classList.add("game_loading_show")
+
+            setTimeout(() => {
+                gameLoading.classList.remove("game_loading_show")
+            }, 2000);
         },
         goBack() {
             this.currentGameUrl = '';
