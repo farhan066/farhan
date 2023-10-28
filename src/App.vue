@@ -78,8 +78,6 @@ export default {
     },
     scrollSmooth() {
       const lenis = new Lenis({
-        smoothTouch: true,
-        lerp:.05,
         syncTouch:true
       })
 
