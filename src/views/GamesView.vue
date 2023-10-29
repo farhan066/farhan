@@ -1,9 +1,10 @@
 <template>
     <div class="games">
         <section id="games" v-if="!isGameLoaded">
-            <h1 class="games_head">Enjoy instant <br /> gaming fun.</h1>
+            <h1 class="games_head text_up">Enjoy instant <br /> gaming fun.</h1>
             <div class="wrapper">
-                <GameCard v-for="(game, i) in gamesList" :game="game" :key="game.id" :index="i" @game-selected="loadGame" />
+                <GameCard class="fade_up" v-for="(game, i) in gamesList" :game="game" :key="game.id" :index="i"
+                    @game-selected="loadGame" />
             </div>
         </section>
 
@@ -18,6 +19,10 @@
 <script>
 import GameCard from '@/components/GameCard.vue';
 import games from "@/data/games.json"
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+import SplitType from 'split-type'
 
 export default {
     data() {
@@ -26,6 +31,9 @@ export default {
             isGameLoaded: false,
             currentGameUrl: ''
         }
+    },
+    mounted() {
+        this.animate()
     },
     components: {
         GameCard
@@ -46,6 +54,39 @@ export default {
             this.isGameLoaded = false;
             const iframe = document.getElementById('game_iframe');
             iframe.src = 'about:blank';  // Load a blank page
+        },
+        animate() {
+            const fadeUp = document.querySelectorAll(".fade_up")
+            fadeUp.forEach((el) => {
+                gsap.from(el, {
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 90%",
+                        markers: true
+                    },
+                    opacity: 0,
+                    y: 50,
+                    duration: .6,
+                    stagger: 3,
+                    delay: .2
+                })
+            });
+            // ======
+            const textUp = document.querySelectorAll(".text_up")
+            textUp.forEach((char)=>{
+                const text = new SplitType(char, {types: 'chars, words'})
+
+                gsap.from(text.words,{
+                    scrollTrigger: {
+                        trigger: char,
+                        start: "top 90%",
+                        markers: true
+                    },
+                    opacity:.2,
+                    duration:1,
+                    stagger:.3
+                })
+            })
         }
     }
 }

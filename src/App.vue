@@ -4,23 +4,24 @@
       <a href="/"><img src="./assets/img/logo.png" alt="Farhan Logo"></a>
     </div>
 
-    <button class="nav_btn" @click="toggleSidebar"><img src="@/assets/img/nav-icon.svg" alt="" class="nav_icon"></button>
+    <button class="nav_btn" @click="openSidebar"><img src="@/assets/img/nav-icon.svg" alt="" class="nav_icon"></button>
 
   </header>
 
   <nav :class="['sidebar', { 'sidebar_show': showSidebar }]">
-    <button class="nav_btn" @click="toggleSidebar"><img src="@/assets/img/close-icon.svg" alt=""
+    <button class="nav_btn" @click="closeSidebar"><img src="@/assets/img/close-icon.svg" alt=""
         class="close_icon"></button>
-    <ul class="page_links" @click="toggleSidebar">
+    <ul class="page_links" @click="closeSidebar">
       <li><router-link to="/">Home</router-link></li>
       <li><router-link to="/games">Web Fun</router-link></li>
       <li><router-link to="/blog">Blog</router-link></li>
     </ul>
   </nav>
-  <div class="props">
-    <div class=""></div>
-    <div class=""></div>
-  </div>
+
+  <div class="blur"></div>
+    <div class="props"></div>
+    <div class="props"></div>
+
   <div class="cursor" :style="cursorStyle"></div>
 
   <!-- <div v-if="isLoading" class="loading_screen">
@@ -39,11 +40,10 @@
 import ContactSection from "./components/ContactSection.vue";
 
 import list from "@/data/projects.json"
-
-import Lenis from "@studio-freight/lenis"
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
+import Lenis from "@studio-freight/lenis"
 ScrollTrigger.config({ ignoreMobileResize: true });
 
 export default {
@@ -76,14 +76,16 @@ export default {
     setTimeout(() => {
       this.isLoading = false;
     }, 2000);
+
+    this.animate()
   },
   methods: {
     updateCursor(e) {
       this.cursorX = e.pageX;
       this.cursorY = e.pageY;
     },
-    toggleSidebar() {
-      this.showSidebar = !this.showSidebar
+    openSidebar() {
+      this.showSidebar = true
     },
     closeSidebar() {
       this.showSidebar = false
@@ -109,6 +111,9 @@ export default {
 
       requestAnimationFrame(raf)
 
+    },
+    animate(){
+      
     }
 
   },

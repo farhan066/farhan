@@ -1,5 +1,5 @@
 <template>
-    <div class="game_card">
+    <div class="game_card ">
         <div class="img">
             <img :src="game.img" :alt="game.title" @click="selectGame()">
         </div>
