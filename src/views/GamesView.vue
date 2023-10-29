@@ -84,7 +84,7 @@ export default {
                         // markers: true
                     },
                     y: 100,
-                    duration: 2,
+                    duration: 1,
                     stagger: .02,
                     delay: .2,
                     ease:'expo.out'

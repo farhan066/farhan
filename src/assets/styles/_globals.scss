@@ -204,16 +204,19 @@ svg {
 }
 .props {
   position: fixed;
-  top: 40%;
-  right: -100px;
+  top: 70%;
+  right: 20px;
   z-index: -2;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   div {
-    background: linear-gradient(36deg, rgba(194,242,255,1) 0%, rgba(173,220,255,1) 100%);
+    background: #003273;
     width: 400px;
     height: 200px;
+    position: absolute;
     border-radius: 1000px;
-    filter: blur(100px);
+    filter: blur(70px);
     &:nth-child(1) {
       animation: propRotate1 6s linear infinite;
     }
@@ -221,6 +224,7 @@ svg {
       animation: propRotate2 6s linear infinite;
       animation-direction: reverse;
       margin-top: -20px;
+      background: #001633;
     }
   }
 }
