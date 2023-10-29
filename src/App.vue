@@ -88,7 +88,7 @@ export default {
     window.addEventListener("mousemove", this.updateCursor)
     document.addEventListener("click", this.scaleCursor)
     document.addEventListener("scroll", this.closeSidebar)
-    this.scrollSmooth()
+    // this.scrollSmooth()
 
     setTimeout(() => {
       this.isLoading = false;

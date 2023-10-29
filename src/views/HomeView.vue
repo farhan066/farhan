@@ -24,7 +24,7 @@
         <a href="#" class="btn-cir">More <br> About Me</a>
       </div>
       <div class="about-text">
-        <p class="para text_up">
+        <p class="para">
           I'm Farhan, a student with a deep passion for exploration. Whether it's delving into the digital world or
           experimenting with digital design, I'm always on the lookout for new horizons. <br><br>
           This is my canvas, where I share my creative works, hobbies, and the exciting journey of discovery. Join me as
@@ -40,7 +40,7 @@
         working on.</h1>
 
       <div class="wrapper">
-        <ProjectCard v-for="(pro, i) in projects" :pro="pro" :key="pro.id" :index="i" />
+        <ProjectCard class="fade_up" v-for="(pro, i) in projects" :pro="pro" :key="pro.id" :index="i" />
       </div>
     </section>
 
@@ -68,6 +68,22 @@ export default {
   },
   methods: {
     animate() {
+      const fadeUp = document.querySelectorAll(".fade_up")
+            fadeUp.forEach((el) => {
+                gsap.from(el, {
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 90%",
+                        // markers: true
+                    },
+                    opacity: 0,
+                    y: 50,
+                    duration: .6,
+                    stagger: 3,
+                    delay: .2
+                })
+            });
+
        // ======
        const textUp = document.querySelectorAll(".text_up")
             textUp.forEach((char) => {
@@ -79,6 +95,23 @@ export default {
                         start: "top 90%"
                     },
                     y: 100,
+                    duration: 1,
+                    stagger: .02,
+                    delay: .2,
+                    ease:'expo.out'
+                })
+            })
+       // ======
+       const textOpacity = document.querySelectorAll(".text_opacity")
+       textOpacity.forEach((char) => {
+                const text = new SplitType(char, { types: 'chars, words' })
+
+                gsap.from(text.chars, {
+                    scrollTrigger: {
+                        trigger: char,
+                        start: "top 90%"
+                    },
+                    opacity:.2,
                     duration: 1,
                     stagger: .01,
                     delay: .2,
