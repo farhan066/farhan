@@ -180,27 +180,8 @@ html.lenis {
   opacity: 0;
 }
 
-// .blur {
-//   backdrop-filter: blur(50px);
-//   -moz-backdrop-filter: blur(50px);
-//   -o-backdrop-filter: blur(50px);
-//   z-index: -9;
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100vw;
-//   height: 100vh;
-// }
-// .props {
-//   z-index: -10;
-//   position: fixed;
-//   right: 20%;
-//   top: 50%;
-//   background-color: $white;
-//   width: 80px;
-//   height: 300px;
-//   border-radius: 1000px;
-//   &:last-child {
-//     transform: rotate(-45deg);
-//   }
-// }
+.text_up{
+  .word{
+    clip-path: polygon(0 120%, 105% 120%, 105% -10%, 0 -10%);
+  }
+}

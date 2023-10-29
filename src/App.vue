@@ -19,8 +19,8 @@
   </nav>
 
   <div class="blur"></div>
-    <div class="props"></div>
-    <div class="props"></div>
+  <div class="props"></div>
+  <div class="props"></div>
 
   <div class="cursor" :style="cursorStyle"></div>
 
@@ -44,6 +44,7 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 import Lenis from "@studio-freight/lenis"
+// import SplitType from 'split-type'
 ScrollTrigger.config({ ignoreMobileResize: true });
 
 export default {
@@ -112,10 +113,9 @@ export default {
       requestAnimationFrame(raf)
 
     },
-    animate(){
+    animate() {
       
     }
-
   },
 };
 

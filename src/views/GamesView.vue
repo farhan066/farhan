@@ -21,8 +21,8 @@ import GameCard from '@/components/GameCard.vue';
 import games from "@/data/games.json"
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
 import SplitType from 'split-type'
+gsap.registerPlugin(ScrollTrigger);
 
 export default {
     data() {
@@ -71,24 +71,29 @@ export default {
                     delay: .2
                 })
             });
+
             // ======
             const textUp = document.querySelectorAll(".text_up")
-            textUp.forEach((char)=>{
-                const text = new SplitType(char, {types: 'chars, words'})
+            textUp.forEach((char) => {
+                const text = new SplitType(char, { types: 'chars, words' })
 
-                gsap.from(text.words,{
+                gsap.from(text.chars, {
                     scrollTrigger: {
                         trigger: char,
                         start: "top 90%",
                         markers: true
                     },
-                    opacity:.2,
-                    duration:1,
-                    stagger:.3
+                    y: 100,
+                    duration: .4,
+                    stagger: .02,
+                    delay: .2
+
                 })
             })
+
         }
     }
 }
 
 </script>
+//'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)' full
