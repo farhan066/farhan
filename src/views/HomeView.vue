@@ -5,9 +5,9 @@
     <section id="intro">
       <div class="wrapper">
         <div class="intro-head">
-          <span class="ta_up_clip">Inquisitive</span>
-          <span class="ta_up_clip">creative</span>
-          <span class="ta_up_clip">explorer</span>
+          <span class="ta_up_clip text_up">Inquisitive</span>
+          <span class="ta_up_clip text_up">creative</span>
+          <span class="ta_up_clip text_up">explorer</span>
           <p class="intro-p">
             Explore a world of curiosity and exploration.
             Dive into captivating articles, stories, and inspiration.
@@ -24,7 +24,7 @@
         <a href="#" class="btn-cir">More <br> About Me</a>
       </div>
       <div class="about-text">
-        <p class="para ta_opacity">
+        <p class="para text_up">
           I'm Farhan, a student with a deep passion for exploration. Whether it's delving into the digital world or
           experimenting with digital design, I'm always on the lookout for new horizons. <br><br>
           This is my canvas, where I share my creative works, hobbies, and the exciting journey of discovery. Join me as
@@ -54,7 +54,7 @@ import ProjectCard from "@/components/ProjectCard.vue"
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
-// import SplitType from 'split-type'
+import SplitType from 'split-type'
 //========
 
 export default {
@@ -68,9 +68,23 @@ export default {
   },
   methods: {
     animate() {
-      // let all = gsap.context(() => {
+       // ======
+       const textUp = document.querySelectorAll(".text_up")
+            textUp.forEach((char) => {
+                const text = new SplitType(char, { types: 'chars, words' })
 
-      // });
+                gsap.from(text.chars, {
+                    scrollTrigger: {
+                        trigger: char,
+                        start: "top 90%"
+                    },
+                    y: 100,
+                    duration: 1,
+                    stagger: .01,
+                    delay: .2,
+                    ease:'expo.out'
+                })
+            })
 
 
     }
