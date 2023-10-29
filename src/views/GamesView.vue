@@ -62,7 +62,7 @@ export default {
                     scrollTrigger: {
                         trigger: el,
                         start: "top 90%",
-                        markers: true
+                        // markers: true
                     },
                     opacity: 0,
                     y: 50,
@@ -81,13 +81,13 @@ export default {
                     scrollTrigger: {
                         trigger: char,
                         start: "top 90%",
-                        markers: true
+                        // markers: true
                     },
                     y: 100,
-                    duration: .4,
+                    duration: 2,
                     stagger: .02,
-                    delay: .2
-
+                    delay: .2,
+                    ease:'expo.out'
                 })
             })
 

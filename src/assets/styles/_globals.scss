@@ -180,8 +180,58 @@ html.lenis {
   opacity: 0;
 }
 
-.text_up{
-  .word{
+.text_up {
+  .word {
     clip-path: polygon(0 120%, 105% 120%, 105% -10%, 0 -10%);
+  }
+}
+
+svg {
+  height: 0;
+  width: 0;
+}
+.blur::before {
+  position: fixed;
+  left: 0;
+  top: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 20%;
+  background: #000000;
+  filter: url(#noiseFilter);
+}
+.props {
+  position: fixed;
+  top: 40%;
+  right: -100px;
+  z-index: -2;
+
+  div {
+    background: linear-gradient(36deg, rgba(194,242,255,1) 0%, rgba(173,220,255,1) 100%);
+    width: 400px;
+    height: 200px;
+    border-radius: 1000px;
+    filter: blur(100px);
+    &:nth-child(1) {
+      animation: propRotate1 6s linear infinite;
+    }
+    &:nth-child(2) {
+      animation: propRotate2 6s linear infinite;
+      animation-direction: reverse;
+      margin-top: -20px;
+    }
+  }
+}
+
+@keyframes propRotate1 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes propRotate2 {
+  to {
+    transform: rotate(360deg);
   }
 }
