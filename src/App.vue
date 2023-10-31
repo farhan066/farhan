@@ -30,7 +30,7 @@
     </Transition>
   </main>
 
-  <svg>
+  <!-- <svg>
     <filter id='noiseFilter'>
       <feTurbulence type='fractalNoise' baseFrequency='3' stitchTiles='stitch' />
       <feColorMatrix in="colorNoise" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0" />
@@ -38,7 +38,7 @@
       <feBlend in="SourceGraphic" in2="monoNoise" mode="screen" />
     </filter>
 
-  </svg>
+  </svg> -->
 
 
 
@@ -62,7 +62,7 @@ gsap.registerPlugin(ScrollTrigger);
 import Lenis from "@studio-freight/lenis"
 // import SplitType from 'split-type'
 ScrollTrigger.config({ ignoreMobileResize: true });
-ScrollTrigger.normalizeScroll(true)
+// ScrollTrigger.normalizeScroll(true)
 ScrollTrigger.observe({
             trigger: 'body',
             type: "touch,pointer", // comma-delimited list of what to listen for ("wheel,touch,scroll,pointer")
