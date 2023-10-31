@@ -24,7 +24,7 @@
         <a href="#" class="btn-cir">More <br> About Me</a>
       </div>
       <div class="about-text">
-        <p class="para">
+        <p class="para text_opacity">
           I'm Farhan, a student with a deep passion for exploration. Whether it's delving into the digital world or
           experimenting with digital design, I'm always on the lookout for new horizons. <br><br>
           This is my canvas, where I share my creative works, hobbies, and the exciting journey of discovery. Join me as
