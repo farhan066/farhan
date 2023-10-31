@@ -1,4 +1,6 @@
 <template>
+  <PreLoader/>
+
   <header>
     <div class="logo">
       <a href="/"><img src="./assets/img/logo.png" alt="Farhan Logo"></a>
@@ -22,25 +24,11 @@
 
   <div class="cursor" :style="cursorStyle"></div>
 
-  <!-- <div v-if="isLoading" class="loading_screen">
-  </div> -->
   <main>
     <Transition name="page" mode="out-in">
       <router-view :projects="projects" />
     </Transition>
   </main>
-
-  <!-- <svg>
-    <filter id='noiseFilter'>
-      <feTurbulence type='fractalNoise' baseFrequency='3' stitchTiles='stitch' />
-      <feColorMatrix in="colorNoise" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0" />
-      <feComposite operator="in" in2="SourceGraphic" result="monoNoise" />
-      <feBlend in="SourceGraphic" in2="monoNoise" mode="screen" />
-    </filter>
-
-  </svg> -->
-
-
 
   <div class="blur"></div>
   <div class="props">
@@ -54,23 +42,26 @@
 
 <script>
 import ContactSection from "./components/ContactSection.vue";
+import PreLoader from "./components/PreLoader.vue";
 
 import list from "@/data/projects.json"
-import gsap from 'gsap';
+
+import imagesloaded from "imagesloaded";
+import {gsap} from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 import Lenis from "@studio-freight/lenis"
 // import SplitType from 'split-type'
 ScrollTrigger.config({ ignoreMobileResize: true });
-// ScrollTrigger.normalizeScroll(true)
 ScrollTrigger.observe({
-            trigger: 'body',
-            type: "touch,pointer", // comma-delimited list of what to listen for ("wheel,touch,scroll,pointer")
-            onUp: () => { ScrollTrigger.update(); },
-        });
+  trigger: 'body',
+  type: "touch,pointer",
+  onUp: () => { ScrollTrigger.update(); },
+});
 export default {
   components: {
-    ContactSection
+    ContactSection,
+    PreLoader
   },
   data() {
     return {
@@ -90,10 +81,25 @@ export default {
     },
   },
   mounted() {
+    const content = document.getElementById('app')
+    const imgLoad = imagesloaded(content)
+
+    imgLoad.on('done', () =>{
+      gsap.to('.counter',{
+        opacity:0
+      })
+      gsap.to('.bar',{
+        scaleY:0,
+        stagger:.3,
+        ease:'expo.out'
+      })
+      
+    })
+
     window.addEventListener("mousemove", this.updateCursor)
     document.addEventListener("click", this.scaleCursor)
     document.addEventListener("scroll", this.closeSidebar)
-    // this.scrollSmooth()
+    this.scrollSmooth()
 
     setTimeout(() => {
       this.isLoading = false;

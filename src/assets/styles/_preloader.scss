@@ -1,0 +1,31 @@
+#preloader{
+    height: 110vh;
+    width: 100%;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 10000;
+    pointer-events: none;
+    .overlay{
+        width: 100%;
+        height: 105vh;
+        display: flex;
+
+        .bar{
+            width: 20vw;
+            background-color: #fafafa;
+            transform-origin: top;
+        }
+    }
+    .counter{
+        position: fixed;
+        color: #090909;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        font-size: 13rem;
+        line-height: .9;
+        font-weight: 500;
+    }
+}
