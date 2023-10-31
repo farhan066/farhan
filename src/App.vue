@@ -62,7 +62,12 @@ gsap.registerPlugin(ScrollTrigger);
 import Lenis from "@studio-freight/lenis"
 // import SplitType from 'split-type'
 ScrollTrigger.config({ ignoreMobileResize: true });
-
+ScrollTrigger.normalizeScroll(true)
+ScrollTrigger.observe({
+            trigger: 'body',
+            type: "touch,pointer", // comma-delimited list of what to listen for ("wheel,touch,scroll,pointer")
+            onUp: () => { ScrollTrigger.update(); },
+        });
 export default {
   components: {
     ContactSection
