@@ -180,11 +180,23 @@ html.lenis {
   opacity: 0;
 }
 
-.text_up {
-  .line {
-    clip-path: polygon(0 120%, 105% 120%, 105% -10%, 0 -10%);
-  }
+.opacity_hide {
+  opacity: 0;
+  transition: 1s;
 }
+.opacity_show{
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
 
 // svg {
 //   height: 0;

@@ -1,5 +1,5 @@
 <template>
-  <PreLoader/>
+  <PreLoader />
 
   <header>
     <div class="logo">
@@ -47,7 +47,7 @@ import PreLoader from "./components/PreLoader.vue";
 import list from "@/data/projects.json"
 
 import imagesloaded from "imagesloaded";
-import {gsap} from 'gsap';
+import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 import Lenis from "@studio-freight/lenis"
@@ -98,17 +98,17 @@ export default {
     this.animate()
   },
   methods: {
-    hideLoader(){
-      setTimeout(()=>{
-        gsap.to('.loading_bar',{
-        scale:0
-      })
-      gsap.to('.bar',{
-        delay:.2,
-        scaleY:0,
-        stagger:.2,
-        ease:'expo.out'
-      })
+    hideLoader() {
+      setTimeout(() => {
+        gsap.to('.center', {
+          opacity:.0
+        })
+        gsap.to('.bar', {
+          delay: .2,
+          scaleY: 0,
+          stagger: .2,
+          ease: 'expo.out'
+        })
       }, 1000)
     },
     updateCursor(e) {
@@ -144,7 +144,7 @@ export default {
 
     },
     animate() {
-
+      
     }
   },
 };

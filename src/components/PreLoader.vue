@@ -1,8 +1,10 @@
 <template>
     <div id="preloader">
-        <!-- <div class="loading_logo"><img src="@/assets/img/fa-loader.svg" alt=""></div> -->
-        <div class="loading_bar">
-            <div class="inner_bar"></div>
+        <div class="center">
+                <img class="loading_logo" src="@/assets/img/fa-loader.svg" alt="">
+            <div class="loading_bar">
+                <div class="inner_bar"></div>
+            </div>
         </div>
         <div class="overlay">
             <div class="bar"></div>

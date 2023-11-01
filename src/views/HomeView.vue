@@ -5,9 +5,9 @@
     <section id="intro">
       <div class="wrapper">
         <div class="intro-head">
-            <span class="text_up">Inquisitive</span>
-            <span class="text_up">creative</span>
-            <span class="text_up">explorer</span>
+            <span class="opacity_hide">Inquisitive</span>
+            <span class="opacity_hide">creative</span>
+            <span class="opacity_hide">explorer</span>
             <p class="intro-p">
               Explore a world of curiosity and exploration.
               Dive into captivating articles, stories, and inspiration.
@@ -24,7 +24,7 @@
         <a href="#" class="btn-cir">More <br> About Me</a>
       </div>
       <div class="about-text">
-        <p class="para text_up">
+        <p class="para">
           I'm Farhan, a student with a deep passion for exploration. Whether it's delving into the digital world or
           experimenting with digital design, I'm always on the lookout for new horizons. <br><br>
           This is my canvas, where I share my creative works, hobbies, and the exciting journey of discovery. Join me as
@@ -40,7 +40,7 @@
         working on.</h1>
 
       <div class="wrapper">
-        <ProjectCard class="fade_up" v-for="(pro, i) in projects" :pro="pro" :key="pro.id" :index="i" />
+        <ProjectCard class="opacity_hide" v-for="(pro, i) in projects" :pro="pro" :key="pro.id" :index="i" />
       </div>
     </section>
 
@@ -51,10 +51,10 @@
 import ProjectCard from "@/components/ProjectCard.vue"
 
 //Animations
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
-import SplitType from 'split-type'
+//import { gsap } from "gsap";
+//import { ScrollTrigger } from "gsap/ScrollTrigger";
+//gsap.registerPlugin(ScrollTrigger);
+// import SplitType from 'split-type'
 //========
 
 export default {
@@ -68,57 +68,19 @@ export default {
   },
   methods: {
     animate() {
-      const fadeUp = document.querySelectorAll(".fade_up")
-            fadeUp.forEach((el) => {
-                gsap.from(el, {
-                    scrollTrigger: {
-                        trigger: el,
-                        start: "top 90%",
-                        // markers: true
-                    },
-                    opacity: 0,
-                    y: 50,
-                    duration: .6,
-                    stagger: 3,
-                    delay: .2
-                })
-            });
+      const words = document.querySelectorAll('.opacity_hide')
+      const observer = new IntersectionObserver(entries =>{
+        entries.forEach(entry =>{
+          entry.target.classList.toggle("opacity_show", entry.isIntersecting)
+        })
+      },
+      {
+        threshold:.2
+      })
 
-       // ======
-       const textUp = document.querySelectorAll(".text_up")
-            textUp.forEach((char) => {
-                const text = new SplitType(char, { types: 'words, lines' })
-
-                gsap.from(text.words, {
-                    scrollTrigger: {
-                        trigger: char,
-                        start: "top 90%"
-                    },
-                    y: 100,
-                    duration: 1,
-                    stagger: .1,
-                    delay: .2,
-                    ease:'expo.out'
-                })
-            })
-       // ======
-       const textOpacity = document.querySelectorAll(".text_opacity")
-       textOpacity.forEach((char) => {
-                const text = new SplitType(char, { types: 'chars, words' })
-
-                gsap.from(text.chars, {
-                    scrollTrigger: {
-                        trigger: char,
-                        start: "top 90%"
-                    },
-                    opacity:.2,
-                    duration: 1,
-                    stagger: .01,
-                    delay: .2,
-                    ease:'expo.out'
-                })
-            })
-
+      words.forEach(word =>{
+        observer.observe(word)
+      })
 
     }
   }
