@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="126.01503mm"
+   height="190.93201mm"
+   viewBox="0 0 126.01503 190.93201"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="favicon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showguides="false"
+     inkscape:zoom="0.27037387"
+     inkscape:cx="399.44688"
+     inkscape:cy="748.96291"
+     inkscape:window-width="1600"
+     inkscape:window-height="821"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-80.671064,-50.626322)">
+    <path
+       style="font-size:238.665px;font-family:'Big Shoulders Display';-inkscape-font-specification:'Big Shoulders Display';letter-spacing:0px;fill:#0b0b0b;stroke-width:1.78999"
+       d="M 80.671065,241.55832 V 50.626324 h 53.818955 v 14.3199 H 96.422954 v 73.389486 h 35.680416 v 14.20057 H 96.422954 v 89.02204 z m 55.728195,0 20.40586,-190.931996 h 29.59446 L 206.6861,241.55832 h -16.10988 l -5.01197,-55.37028 h -28.04314 l -4.89263,55.37028 z m 22.67318,-69.69018 h 24.94049 l -3.69931,-41.76637 -5.36996,-65.155546 h -6.68262 l -5.36996,65.274876 z"
+       id="text4"
+       aria-label="FA" />
+    <circle
+       style="fill:#000000;stroke-width:0.471717"
+       id="path2"
+       cx="266.67322"
+       cy="-59.406101"
+       r="36.638382" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11.2889px;font-family:Montserrat;-inkscape-font-specification:'Montserrat Medium';letter-spacing:0px;fill:#000000;stroke-width:0.264583"
+       id="text5"><textPath
+         xlink:href="#path2"
+         id="textPath5"><tspan
+           id="tspan2"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11.2889px;font-family:Montserrat;-inkscape-font-specification:'Montserrat Medium';stroke-width:0.264583">~ KEEP SCROLLING ~ KEEP SCROLLING                                  </tspan></textPath></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11.2889px;font-family:Montserrat;-inkscape-font-specification:'Montserrat Medium';letter-spacing:0px;fill:#000000;stroke-width:0.264583"
+       id="text6"
+       transform="translate(122.13144,-99.296667)"><textPath
+         xlink:href="#path2"
+         id="textPath6"><tspan
+           id="tspan6"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:11.2889px;font-family:Montserrat;-inkscape-font-specification:'Montserrat Medium';stroke-width:0.264583">~ KEEP SCROLLING ~ KEEP SCROLLING                                  </tspan></textPath></text>
+  </g>
+</svg>

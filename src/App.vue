@@ -84,17 +84,7 @@ export default {
     const content = document.getElementById('app')
     const imgLoad = imagesloaded(content)
 
-    imgLoad.on('done', () =>{
-      gsap.to('.counter',{
-        opacity:0
-      })
-      gsap.to('.bar',{
-        scaleY:0,
-        stagger:.3,
-        ease:'expo.out'
-      })
-      
-    })
+    imgLoad.on('done', this.hideLoader)
 
     window.addEventListener("mousemove", this.updateCursor)
     document.addEventListener("click", this.scaleCursor)
@@ -108,6 +98,19 @@ export default {
     this.animate()
   },
   methods: {
+    hideLoader(){
+      setTimeout(()=>{
+        gsap.to('.loading_bar',{
+        scale:0
+      })
+      gsap.to('.bar',{
+        delay:.2,
+        scaleY:0,
+        stagger:.2,
+        ease:'expo.out'
+      })
+      }, 1000)
+    },
     updateCursor(e) {
       this.cursorX = e.pageX;
       this.cursorY = e.pageY;

@@ -181,15 +181,15 @@ html.lenis {
 }
 
 .text_up {
-  .word {
+  .line {
     clip-path: polygon(0 120%, 105% 120%, 105% -10%, 0 -10%);
   }
 }
 
-svg {
-  height: 0;
-  width: 0;
-}
+// svg {
+//   height: 0;
+//   width: 0;
+// }
 // .blur::before {
 //   position: fixed;
 //   left: 0;

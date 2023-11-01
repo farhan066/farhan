@@ -5,14 +5,14 @@
     <section id="intro">
       <div class="wrapper">
         <div class="intro-head">
-          <span class="ta_up_clip text_up">Inquisitive</span>
-          <span class="ta_up_clip text_up">creative</span>
-          <span class="ta_up_clip text_up">explorer</span>
-          <p class="intro-p">
-            Explore a world of curiosity and exploration.
-            Dive into captivating articles, stories, and inspiration.
-          </p>
-        </div>
+            <span class="text_up">Inquisitive</span>
+            <span class="text_up">creative</span>
+            <span class="text_up">explorer</span>
+            <p class="intro-p">
+              Explore a world of curiosity and exploration.
+              Dive into captivating articles, stories, and inspiration.
+            </p>
+          </div>
         <img src="@/assets/img/scrolltext.svg" alt="Scroll Down" class="circle__text">
       </div>
     </section>
@@ -24,7 +24,7 @@
         <a href="#" class="btn-cir">More <br> About Me</a>
       </div>
       <div class="about-text">
-        <p class="para text_opacity">
+        <p class="para text_up">
           I'm Farhan, a student with a deep passion for exploration. Whether it's delving into the digital world or
           experimenting with digital design, I'm always on the lookout for new horizons. <br><br>
           This is my canvas, where I share my creative works, hobbies, and the exciting journey of discovery. Join me as
@@ -87,16 +87,16 @@ export default {
        // ======
        const textUp = document.querySelectorAll(".text_up")
             textUp.forEach((char) => {
-                const text = new SplitType(char, { types: 'chars, words' })
+                const text = new SplitType(char, { types: 'words, lines' })
 
-                gsap.from(text.chars, {
+                gsap.from(text.words, {
                     scrollTrigger: {
                         trigger: char,
                         start: "top 90%"
                     },
                     y: 100,
                     duration: 1,
-                    stagger: .02,
+                    stagger: .1,
                     delay: .2,
                     ease:'expo.out'
                 })
