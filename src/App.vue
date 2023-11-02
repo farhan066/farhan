@@ -68,12 +68,14 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 import Lenis from "@studio-freight/lenis"
 import SplitType from 'split-type'
+
 ScrollTrigger.config({ ignoreMobileResize: true });
 ScrollTrigger.observe({
   trigger: 'body',
   type: "touch,pointer",
   onUp: () => { ScrollTrigger.update(); },
 });
+
 export default {
   components: {
     ContactSection,
@@ -112,7 +114,7 @@ export default {
     hideLoader() {
       setTimeout(() => {
         gsap.to('.center', {
-          opacity:.0
+          opacity: .0
         })
         gsap.to('.bar', {
           delay: .2,
@@ -121,6 +123,7 @@ export default {
           ease: 'power4.out'
         })
       }, 1000)
+
     },
     updateCursor(e) {
       this.cursorX = e.pageX;
@@ -154,24 +157,42 @@ export default {
       requestAnimationFrame(raf)
 
     },
+    afterRouteEnter(to, from, next) {
+      next(vm => {
+        vm.animate();
+      });
+    },
     animate() {
       const textUp = document.querySelectorAll('.text_up')
-      textUp.forEach(word=>{
-        const text = new SplitType(word, {types:'chars, words'})
+      textUp.forEach(word => {
+        const text = new SplitType(word, { types: 'chars,words' })
 
-        gsap.to(text.chars,{
-          scrollTrigger:{
-            trigger: word,
-            start:'top 90%'
-          },
-          y:0,
-          duration:1,
-          delay:.2,
-          stagger:.01,
-          ease:'power4.out'
-        })
+        gsap.fromTo(text.chars, {
+          y:'100px'
+        },
+          {
+            scrollTrigger: {
+              trigger: word,
+              start: 'top 95%'
+            },
+            y:0,
+            stagger: .01,
+            delay: 3,
+            ease:'expo.out',
+            duration:1.5
+          })
       })
-    }
+
+      ////
+    },
+    beforeRouteUpdate(to, from, next) {
+    this.animate(); // Call your animation function before the route update
+    next();
+  },
+  afterRouteUpdate() {
+    this.animate(); // Call your animation function after the route update
+  }
+
   },
 };
 

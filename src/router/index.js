@@ -21,9 +21,17 @@ const routes = [
   }
 ]
 
+
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
 
+// router.beforeEach((to, from, next) => {
+//   // Call your animation function here
+//   this.animate()
+
+//   // Continue with the navigation
+//   next()
+// })
 export default router

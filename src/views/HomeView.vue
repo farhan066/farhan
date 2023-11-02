@@ -5,9 +5,9 @@
     <section id="intro">
       <div class="wrapper">
         <div class="intro-head">
-            <span class="opacity_hide">Inquisitive</span>
-            <span class="opacity_hide">creative</span>
-            <span class="opacity_hide">explorer</span>
+            <span class="text_up">Inquisitive</span>
+            <span class="text_up">creative</span>
+            <span class="text_up">explorer</span>
             <p class="intro-p">
               Explore a world of curiosity and exploration.
               Dive into captivating articles, stories, and inspiration.
@@ -23,7 +23,7 @@
         <div class="circle-photo"><img src="@/assets/img/farhan.webp" alt="Farhan"></div>
         <a href="#" class="btn-cir">More <br> About Me</a>
       </div>
-      <div class="about-text">
+      <div class="about-text fade_fast">
         <p class="para">
           I'm Farhan, a student with a deep passion for exploration. Whether it's delving into the digital world or
           experimenting with digital design, I'm always on the lookout for new horizons. <br><br>
@@ -51,10 +51,10 @@
 import ProjectCard from "@/components/ProjectCard.vue"
 
 //Animations
-//import { gsap } from "gsap";
-//import { ScrollTrigger } from "gsap/ScrollTrigger";
-//gsap.registerPlugin(ScrollTrigger);
-// import SplitType from 'split-type'
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+import SplitType from 'split-type'
 //========
 
 export default {
@@ -68,8 +68,41 @@ export default {
   },
   methods: {
     animate() {
-      
+      const fade = document.querySelectorAll('.fade')
+      fade.forEach(word => {
+        const text = new SplitType(word, { types: 'words' })
 
+        gsap.fromTo(text.words, {
+          opacity: 0
+        },
+          {
+            scrollTrigger: {
+              trigger: word,
+              start: 'top 95%'
+            },
+            opacity: 1,
+            stagger: .1,
+            delay: .2
+          })
+      })
+      const fadeFast = document.querySelectorAll('.fade_fast')
+      fadeFast.forEach(word => {
+        const text = new SplitType(word, { types: 'words' })
+
+        gsap.fromTo(text.words, {
+          opacity: 0
+        },
+          {
+            scrollTrigger: {
+              trigger: word,
+              start: 'top 95%'
+            },
+            opacity: 1,
+            stagger: .03,
+            delay: .2
+          })
+      })
+      ////
     }
   }
 }

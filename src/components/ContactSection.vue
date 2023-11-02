@@ -3,7 +3,7 @@
   <section id="contact">
     <div class="wrapper">
       <div class="contact__top">
-        <h2 class="contact__top__text text_up">Share a cool fact or join me for a chat.</h2>
+        <h2 class="contact__top__text fade">Share a cool fact or join me for a chat.</h2>
         <div class="contact__top__circle--text"></div>
       </div> 
 
