@@ -68,19 +68,7 @@ export default {
   },
   methods: {
     animate() {
-      const words = document.querySelectorAll('.opacity_hide')
-      const observer = new IntersectionObserver(entries =>{
-        entries.forEach(entry =>{
-          entry.target.classList.toggle("opacity_show", entry.isIntersecting)
-        })
-      },
-      {
-        threshold:.2
-      })
-
-      words.forEach(word =>{
-        observer.observe(word)
-      })
+      
 
     }
   }

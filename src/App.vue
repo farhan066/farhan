@@ -30,11 +30,27 @@
     </Transition>
   </main>
 
-  <div class="blur"></div>
-  <div class="props">
-    <div></div>
-    <div></div>
-  </div>
+  <!-- <div class="grain">
+    <svg style="display: none;">
+  <defs>
+    <filter id="noise">
+      <feTurbulence
+        baseFrequency="0.7"
+        seed="0"
+        type="fractalNoise"
+      >
+        <animate
+          attributeName="seed"
+          values="0;100"
+          dur="800ms"
+          repeatCount="indefinite"                        
+        />
+      </feTurbulence>
+  
+    </filter>  
+  </defs>
+</svg>
+  </div> -->
 
   <!-- ===========contact============ -->
   <ContactSection />
@@ -51,7 +67,7 @@ import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 import Lenis from "@studio-freight/lenis"
-// import SplitType from 'split-type'
+import SplitType from 'split-type'
 ScrollTrigger.config({ ignoreMobileResize: true });
 ScrollTrigger.observe({
   trigger: 'body',
@@ -68,8 +84,7 @@ export default {
       projects: list,
       cursorX: 0,
       cursorY: 0,
-      showSidebar: false,
-      isLoading: true
+      showSidebar: false
     }
   },
   computed: {
@@ -91,10 +106,6 @@ export default {
     document.addEventListener("scroll", this.closeSidebar)
     this.scrollSmooth()
 
-    setTimeout(() => {
-      this.isLoading = false;
-    }, 2000);
-
     this.animate()
   },
   methods: {
@@ -107,7 +118,7 @@ export default {
           delay: .2,
           scaleY: 0,
           stagger: .2,
-          ease: 'expo.out'
+          ease: 'power4.out'
         })
       }, 1000)
     },
@@ -144,7 +155,22 @@ export default {
 
     },
     animate() {
-      
+      const textUp = document.querySelectorAll('.text_up')
+      textUp.forEach(word=>{
+        const text = new SplitType(word, {types:'chars, words'})
+
+        gsap.to(text.chars,{
+          scrollTrigger:{
+            trigger: word,
+            start:'top 90%'
+          },
+          y:0,
+          duration:1,
+          delay:.2,
+          stagger:.01,
+          ease:'power4.out'
+        })
+      })
     }
   },
 };
