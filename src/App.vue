@@ -24,11 +24,11 @@
 
   <div class="cursor" :style="cursorStyle"></div>
 
-  <main>
-    <Transition name="page" mode="out-in">
+
+    <!-- <Transition name="page" mode="out-in"> -->
       <router-view :projects="projects" />
-    </Transition>
-  </main>
+    <!-- </Transition> -->
+
 
   <!-- <div class="grain">
     <svg style="display: none;">
