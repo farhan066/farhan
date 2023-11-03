@@ -203,9 +203,11 @@ html.lenis {
 .opacity_hide {
   opacity: 0;
   transition: 1s;
+  transform: translateY(20px);
 }
 .opacity_show {
-  opacity: 1 !important;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 // svg {

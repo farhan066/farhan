@@ -56,6 +56,25 @@ export default {
             iframe.src = 'about:blank';  // Load a blank page
         },
         animate() {
+            const textUp = document.querySelectorAll('.text_up') //1
+            textUp.forEach(word => {
+                const text = new SplitType(word, { types: 'chars, words' })
+
+                gsap.fromTo(text.chars, {
+                    y: '100px'
+                },
+                    {
+                        scrollTrigger: {
+                            trigger: word,
+                            start: 'top 95%'
+                        },
+                        y: 0,
+                        stagger: .01,
+                        delay: .3,
+                        ease: 'expo.out',
+                        duration: 1.5
+                    })
+            })
             const fadeUp = document.querySelectorAll(".fade_up")
             fadeUp.forEach((el) => {
                 gsap.from(el, {
