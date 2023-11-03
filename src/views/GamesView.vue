@@ -56,6 +56,21 @@ export default {
             iframe.src = 'about:blank';  // Load a blank page
         },
         animate() {
+            const fadeSimple = document.querySelectorAll('.fade_simple')
+            fadeSimple.forEach(el => {
+                gsap.fromTo(el, {
+                    opacity: 0
+                },
+                    {
+                        scrollTrigger: {
+                            trigger: el,
+                            start: 'top, 95%'
+                        },
+                        opacity: 1,
+                        delay: .2,
+                        duration: 1.2
+                    })
+            })
             const textUp = document.querySelectorAll('.text_up') //1
             textUp.forEach(word => {
                 const text = new SplitType(word, { types: 'chars, words' })
@@ -90,27 +105,6 @@ export default {
                     delay: .2
                 })
             });
-
-            const fadeLeft = document.querySelectorAll('.fade_left')
-
-            fadeLeft.forEach(word => {
-                const text = new SplitType(word, { types: 'words' })
-
-                gsap.fromTo(text.words, {
-                    opacity: 0,
-                    x: -20
-                },
-                    {
-                        scrollTrigger: {
-                            trigger: word,
-                            start: 'top 95%'
-                        },
-                        opacity: 1,
-                        x: 0,
-                        stagger: .05,
-                        delay: .2
-                    })
-            })
 
             const fade = document.querySelectorAll('.fade')
             fade.forEach(word => {
