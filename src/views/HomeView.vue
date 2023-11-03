@@ -8,7 +8,7 @@
             <span class="text_up">Inquisitive</span>
             <span class="text_up">creative</span>
             <span class="text_up">explorer</span>
-            <p class="intro-p">
+            <p class="intro-p fade_simple">
               Explore a world of curiosity and exploration.
               Dive into captivating articles, stories, and inspiration.
             </p>
@@ -20,7 +20,7 @@
     <!-- ========About======= -->
     <section id="short-about">
       <div class="about-head">
-        <div class="circle-photo"><img src="@/assets/img/farhan.webp" alt="Farhan"></div>
+        <div class="circle-photo fade_simple"><img src="@/assets/img/farhan.webp" alt="Farhan"></div>
         <a href="#" class="btn-cir">More <br> About Me</a>
       </div>
       <div class="about-text fade_fast">
@@ -68,7 +68,44 @@ export default {
   },
   methods: {
     animate() {
-      const fade = document.querySelectorAll('.fade')
+      const fadeSimple = document.querySelectorAll('.fade_simple')
+      fadeSimple.forEach(el=>{
+        gsap.fromTo(el,{
+          opacity:0,
+          x:-20
+        },
+        {
+          scrollTrigger:{
+            trigger:el,
+            start:'top, 95%'
+          },
+          x:0,
+          opacity:1,
+          delay:.2,
+          duration:1,
+          ease:'expo.out'
+        })
+      })
+      const textUp = document.querySelectorAll('.text_up') //1
+      textUp.forEach(word => {
+        const text = new SplitType(word, { types: 'chars, words' })
+
+        gsap.fromTo(text.chars, {
+          y:'100px'
+        },
+          {
+            scrollTrigger: {
+              trigger: word,
+              start: 'top 95%'
+            },
+            y:0,
+            stagger: .02,
+            delay: .3,
+            ease:'expo.out',
+            duration:2
+          })
+      })
+      const fade = document.querySelectorAll('.fade') //2
       fade.forEach(word => {
         const text = new SplitType(word, { types: 'words' })
 
@@ -85,7 +122,7 @@ export default {
             delay: .2
           })
       })
-      const fadeFast = document.querySelectorAll('.fade_fast')
+      const fadeFast = document.querySelectorAll('.fade_fast') //3
       fadeFast.forEach(word => {
         const text = new SplitType(word, { types: 'words' })
 
@@ -101,6 +138,26 @@ export default {
             stagger: .03,
             delay: .2
           })
+      })
+      const fadeLeft = document.querySelectorAll('.fade_left') //4
+
+      fadeLeft.forEach(word=>{
+        const text = new SplitType(word, {types: 'words'})
+
+        gsap.fromTo(text.words,{
+          opacity:0,
+          x:-20
+        },
+        {
+          scrollTrigger:{
+            trigger:word,
+            start:'top 95%'
+          },
+          opacity:1,
+          x:0,
+          stagger:.05,
+          delay:.2
+        })
       })
       ////
     }

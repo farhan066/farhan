@@ -1,7 +1,7 @@
 <template>
     <div class="games">
         <section id="games" v-if="!isGameLoaded">
-            <h1 class="games_head">Enjoy instant <br /> gaming fun.</h1>
+            <h1 class="games_head fade">Enjoy instant <br /> gaming fun.</h1>
             <div class="wrapper">
                 <GameCard class="fade_up" v-for="(game, i) in gamesList" :game="game" :key="game.id" :index="i"
                     @game-selected="loadGame" />
@@ -72,24 +72,45 @@ export default {
                 })
             });
 
-            // ======
-            const textUp = document.querySelectorAll(".text_up")
-            textUp.forEach((char) => {
-                const text = new SplitType(char, { types: 'chars, words' })
+            const fadeLeft = document.querySelectorAll('.fade_left')
 
-                gsap.from(text.chars, {
-                    scrollTrigger: {
-                        trigger: char,
-                        start: "top 90%",
-                        // markers: true
-                    },
-                    y: 100,
-                    duration: 1,
-                    stagger: .02,
-                    delay: .2,
-                    ease:'expo.out'
-                })
+            fadeLeft.forEach(word => {
+                const text = new SplitType(word, { types: 'words' })
+
+                gsap.fromTo(text.words, {
+                    opacity: 0,
+                    x: -20
+                },
+                    {
+                        scrollTrigger: {
+                            trigger: word,
+                            start: 'top 95%'
+                        },
+                        opacity: 1,
+                        x: 0,
+                        stagger: .05,
+                        delay: .2
+                    })
             })
+
+            const fade = document.querySelectorAll('.fade')
+            fade.forEach(word => {
+                const text = new SplitType(word, { types: 'words' })
+
+                gsap.fromTo(text.words, {
+                    opacity: 0
+                },
+                    {
+                        scrollTrigger: {
+                            trigger: word,
+                            start: 'top 95%'
+                        },
+                        opacity: 1,
+                        stagger: .1,
+                        delay: .2
+                    })
+            })
+            ///
 
         }
     }

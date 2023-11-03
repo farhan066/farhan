@@ -1,7 +1,7 @@
 #contact {
   padding: 0;
   min-width: 100%;
-  a,li,h1,h2,p,.word,.char,.line{
+  *{
     color: $black-1 ;
   }
 
@@ -54,6 +54,8 @@
     align-items: flex-end;
     width: 100%;
     &__links{
+      display: flex;
+      flex-direction: column;
       a{
         font-size: var(--font-sml);
         font-weight: 700;
@@ -61,7 +63,6 @@
         text-decoration: underline;
         line-height: 1;
         transition: .3s;
-
         &:hover{
           opacity: .6;
         }
@@ -70,12 +71,13 @@
           align-items: center;
           margin-bottom: 20px;
           text-decoration: none;
-          user-select: auto !important;
+          font-weight: 800;
         }
         .arrow{
           height: 20px;
           padding-left: 5px;
           transform: rotate(-45deg);
+          display: none;
         }
       }
     }

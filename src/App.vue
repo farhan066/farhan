@@ -67,7 +67,7 @@ import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 import Lenis from "@studio-freight/lenis"
-import SplitType from 'split-type'
+// import SplitType from 'split-type'
 
 ScrollTrigger.config({ ignoreMobileResize: true });
 ScrollTrigger.observe({
@@ -122,8 +122,7 @@ export default {
           stagger: .2,
           ease: 'power4.out'
         })
-      }, 1000)
-
+      },0)
     },
     updateCursor(e) {
       this.cursorX = e.pageX;
@@ -163,35 +162,8 @@ export default {
       });
     },
     animate() {
-      const textUp = document.querySelectorAll('.text_up')
-      textUp.forEach(word => {
-        const text = new SplitType(word, { types: 'chars,words' })
-
-        gsap.fromTo(text.chars, {
-          y:'100px'
-        },
-          {
-            scrollTrigger: {
-              trigger: word,
-              start: 'top 95%'
-            },
-            y:0,
-            stagger: .01,
-            delay: 3,
-            ease:'expo.out',
-            duration:1.5
-          })
-      })
-
       ////
-    },
-    beforeRouteUpdate(to, from, next) {
-    this.animate(); // Call your animation function before the route update
-    next();
-  },
-  afterRouteUpdate() {
-    this.animate(); // Call your animation function after the route update
-  }
+    }
 
   },
 };
