@@ -5,14 +5,14 @@
     <section id="intro">
       <div class="wrapper">
         <div class="intro-head">
-            <span class="text_up">Inquisitive</span>
-            <span class="text_up">creative</span>
-            <span class="text_up">explorer</span>
-            <p class="intro-p fade_simple">
-              Explore a world of curiosity and exploration.
-              Dive into captivating articles, stories, and inspiration.
-            </p>
-          </div>
+          <span class="text_up">Inquisitive</span>
+          <span class="text_up">creative</span>
+          <span class="text_up">explorer</span>
+          <p class="intro-p fade_simple">
+            Explore a world of curiosity and exploration.
+            Dive into captivating articles, stories, and inspiration.
+          </p>
+        </div>
         <img src="@/assets/img/scrolltext.svg" alt="Scroll Down" class="circle__text">
       </div>
     </section>
@@ -35,7 +35,7 @@
 
     <!-- =========Projects======== -->
     <section id="projects">
-      <h1 class="headline">Feel free to explore a couple of <span class="highlight ta_opacity">projects</span> I've had
+      <h1 class="headline">Feel free to explore a couple of <span class="highlight fade">projects</span> I've had
         some fun
         working on.</h1>
 
@@ -68,41 +68,50 @@ export default {
   },
   methods: {
     animate() {
+      const opacity = document.querySelectorAll('.opacity_hide')
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          entry.target.classList.toggle('opacity_show', entry.isIntersecting)
+        });
+      },{
+        threshold:.3
+      })
+      opacity.forEach(el=>{
+        observer.observe(el)
+      })
+      
       const fadeSimple = document.querySelectorAll('.fade_simple')
-      fadeSimple.forEach(el=>{
-        gsap.fromTo(el,{
-          opacity:0,
-          x:-20
+      fadeSimple.forEach(el => {
+        gsap.fromTo(el, {
+          opacity: 0
         },
-        {
-          scrollTrigger:{
-            trigger:el,
-            start:'top, 95%'
-          },
-          x:0,
-          opacity:1,
-          delay:.2,
-          duration:1,
-          ease:'expo.out'
-        })
+          {
+            scrollTrigger: {
+              trigger: el,
+              start: 'top, 95%'
+            },
+            opacity: 1,
+            delay: .2,
+            duration: 1.2
+          })
       })
       const textUp = document.querySelectorAll('.text_up') //1
       textUp.forEach(word => {
         const text = new SplitType(word, { types: 'chars, words' })
 
         gsap.fromTo(text.chars, {
-          y:'100px'
+          y: '100px'
         },
           {
             scrollTrigger: {
               trigger: word,
               start: 'top 95%'
             },
-            y:0,
-            stagger: .02,
+            y: 0,
+            stagger: .01,
             delay: .3,
-            ease:'expo.out',
-            duration:2
+            ease: 'expo.out',
+            duration: 1.5
           })
       })
       const fade = document.querySelectorAll('.fade') //2
@@ -135,29 +144,29 @@ export default {
               start: 'top 95%'
             },
             opacity: 1,
-            stagger: .03,
+            stagger: .04,
             delay: .2
           })
       })
       const fadeLeft = document.querySelectorAll('.fade_left') //4
 
-      fadeLeft.forEach(word=>{
-        const text = new SplitType(word, {types: 'words'})
+      fadeLeft.forEach(word => {
+        const text = new SplitType(word, { types: 'words' })
 
-        gsap.fromTo(text.words,{
-          opacity:0,
-          x:-20
+        gsap.fromTo(text.words, {
+          opacity: 0,
+          x: -20
         },
-        {
-          scrollTrigger:{
-            trigger:word,
-            start:'top 95%'
-          },
-          opacity:1,
-          x:0,
-          stagger:.05,
-          delay:.2
-        })
+          {
+            scrollTrigger: {
+              trigger: word,
+              start: 'top 95%'
+            },
+            opacity: 1,
+            x: 0,
+            stagger: .05,
+            delay: .2
+          })
       })
       ////
     }

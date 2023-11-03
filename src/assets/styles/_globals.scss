@@ -197,16 +197,16 @@ html.lenis {
 
 .text_up{
   .word{
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 110% 0, 110% 100%, 0% 100%);
   }
 }
-// .opacity_hide {
-//   opacity: 0;
-//   transition: 1s;
-// }
-// .opacity_show {
-//   opacity: 1;
-// }
+.opacity_hide {
+  opacity: 0;
+  transition: 1s;
+}
+.opacity_show {
+  opacity: 1 !important;
+}
 
 // svg {
 //   height: 0;
