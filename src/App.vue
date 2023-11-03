@@ -25,9 +25,9 @@
   <div class="cursor" :style="cursorStyle"></div>
 
 
-    <!-- <Transition name="page" mode="out-in"> -->
+    <Transition mode="out-in">
       <router-view :projects="projects" />
-    <!-- </Transition> -->
+    </Transition>
 
 
   <!-- <div class="grain">
