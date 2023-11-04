@@ -18,6 +18,7 @@
       <li><router-link to="/games">Web Fun</router-link></li>
       <li><router-link to="/blog">Blog</router-link></li>
     </ul>
+    <p class="sidebar_footer">Scroll to close sidebar</p>
   </nav>
 
 
@@ -25,9 +26,9 @@
   <div class="cursor" :style="cursorStyle"></div>
 
 
-    <Transition mode="out-in">
-      <router-view :projects="projects" />
-    </Transition>
+  <Transition name="page" mode="out-in">
+    <router-view :projects="projects" />
+  </Transition>
 
 
   <!-- <div class="grain">
@@ -70,11 +71,12 @@ import Lenis from "@studio-freight/lenis"
 // import SplitType from 'split-type'
 
 ScrollTrigger.config({ ignoreMobileResize: true });
-ScrollTrigger.observe({
-  trigger: 'body',
-  type: "touch,pointer",
-  onUp: () => { ScrollTrigger.update(); },
-});
+
+// ScrollTrigger.observe({
+//   trigger: 'body',
+//   type: "touch,pointer",
+//   onUp: () => { ScrollTrigger.update(); },
+// });
 
 export default {
   components: {
@@ -122,11 +124,11 @@ export default {
           stagger: .2,
           ease: 'power4.out'
         })
-      },0)
+      }, 0)
     },
     updateCursor(e) {
-      this.cursorX = e.pageX;
-      this.cursorY = e.pageY;
+      this.cursorX = e.clientX;
+      this.cursorY = e.clientY;
     },
     openSidebar() {
       this.showSidebar = true

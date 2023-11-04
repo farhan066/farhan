@@ -64,7 +64,8 @@ export default {
                     {
                         scrollTrigger: {
                             trigger: el,
-                            start: 'top, 95%'
+                            start: 'top 95%',
+                            end: 'top 5%'
                         },
                         opacity: 1,
                         delay: .2,
@@ -81,13 +82,14 @@ export default {
                     {
                         scrollTrigger: {
                             trigger: word,
-                            start: 'top 95%'
+                            start: 'top 95%',
+                            end: 'top 5%'
                         },
                         y: 0,
                         stagger: .01,
                         delay: .3,
                         ease: 'expo.out',
-                        duration: 1.5
+                        duration: 1.2
                     })
             })
             const fadeUp = document.querySelectorAll(".fade_up")
@@ -96,7 +98,7 @@ export default {
                     scrollTrigger: {
                         trigger: el,
                         start: "top 90%",
-                        // markers: true
+                        end: 'top 5%'
                     },
                     opacity: 0,
                     y: 50,
@@ -116,7 +118,8 @@ export default {
                     {
                         scrollTrigger: {
                             trigger: word,
-                            start: 'top 95%'
+                            start: 'top 95%',
+                            end: 'top 5%'
                         },
                         opacity: 1,
                         stagger: .1,

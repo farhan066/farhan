@@ -1,18 +1,26 @@
+
+
 .cursor{
     width: 20px;
     height: 20px;
     background-color: $white;
     border-radius: 50%;
-    position: absolute;
+    position: fixed;
     transform: translate(-50%,-50%);
     transition: 100ms ease-out;
-    z-index: 2000;
+    z-index: 5000;
     pointer-events: none;
     mix-blend-mode: difference;
     display: none;
     
-    @media (hover: hover) {
-            display: block;
+}
+@media (hover: hover) {
+    .cursor{
+        display: block;
+        opacity: 0;
+    }
+    body:hover .cursor{
+        opacity: 1;
     }
 }
 
