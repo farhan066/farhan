@@ -28,6 +28,6 @@ This project is licensed under the MIT License.
 
 If you have any questions or want to connect, feel free to reach out:
 
-    Email: [farhan06.contact@gmail.com](mailto:farhan06.contact@gmail.com)
-    Drbbble: [Farhan Ahmad](https://dribbble.com/dev_farhan)
-    LinkedIn: [Farhan Ahmad](https://www.linkedin.com/in/farhan-ahmad-8194591b7)
+Email: [farhan06.contact@gmail.com](mailto:farhan06.contact@gmail.com)
+Drbbble: [Farhan Ahmad](https://dribbble.com/dev_farhan)
+LinkedIn: [Farhan Ahmad](https://www.linkedin.com/in/farhan-ahmad-8194591b7)
