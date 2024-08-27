@@ -15,7 +15,7 @@
         class="close_icon"></button>
     <ul class="page_links" @click="closeSidebar">
       <li><router-link to="/">Home</router-link></li>
-      <li><router-link to="/games">Web Fun</router-link></li>
+      <li><router-link to="/games">Mini Games</router-link></li>
       <li><router-link to="/blog">Blog</router-link></li>
     </ul>
     <p class="sidebar_footer">Scroll to close sidebar</p>
@@ -29,29 +29,6 @@
   <Transition name="page" mode="out-in">
     <router-view :projects="projects" />
   </Transition>
-
-
-  <!-- <div class="grain">
-    <svg style="display: none;">
-  <defs>
-    <filter id="noise">
-      <feTurbulence
-        baseFrequency="0.7"
-        seed="0"
-        type="fractalNoise"
-      >
-        <animate
-          attributeName="seed"
-          values="0;100"
-          dur="800ms"
-          repeatCount="indefinite"                        
-        />
-      </feTurbulence>
-  
-    </filter>  
-  </defs>
-</svg>
-  </div> -->
 
   <!-- ===========contact============ -->
   <ContactSection />
@@ -71,12 +48,6 @@ import Lenis from "@studio-freight/lenis"
 // import SplitType from 'split-type'
 
 ScrollTrigger.config({ ignoreMobileResize: true });
-
-// ScrollTrigger.observe({
-//   trigger: 'body',
-//   type: "touch,pointer",
-//   onUp: () => { ScrollTrigger.update(); },
-// });
 
 export default {
   components: {

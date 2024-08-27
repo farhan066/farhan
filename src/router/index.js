@@ -27,11 +27,4 @@ const router = createRouter({
   routes
 })
 
-// router.beforeEach((to, from, next) => {
-//   // Add your function here that you want to run on route change or page refresh
-//   this.$root.animate()
-
-//   next()
-// })
-
 export default router
