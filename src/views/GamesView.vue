@@ -1,7 +1,7 @@
 <template>
     <div class="games">
         <section id="games" v-if="!isGameLoaded">
-            <h1 class="games_head fade">Enjoy instant <br /> gaming fun.</h1>
+            <h1 class="page_head fade">Enjoy instant <br /> gaming fun.</h1>
             <div class="wrapper">
                 <GameCard class="fade_up" v-for="(game, i) in gamesList" :game="game" :key="game.id" :index="i"
                     @game-selected="loadGame" />
