@@ -15,6 +15,7 @@
         class="close_icon"></button>
     <ul class="page_links" @click="closeSidebar">
       <li><router-link to="/">Home</router-link></li>
+      <li><router-link to="/projects">Projects</router-link></li>
       <li><router-link to="/games">Mini Games</router-link></li>
       <li><router-link to="/blog">Blog</router-link></li>
     </ul>

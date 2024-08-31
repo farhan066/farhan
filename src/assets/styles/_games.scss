@@ -1,15 +1,6 @@
 #games{
     margin-top: 30px;
 
-    .games_head{
-        line-height: 1;
-        @include standard-text;
-        margin-bottom: 60px;
-        @include breakpoint-up(medium){
-            @include big-text;
-            font-weight: 500;
-        }
-    }
     .wrapper{
         display: grid;
         grid-gap: 20px;
