@@ -38,6 +38,8 @@
         .details{
             min-height: 150px;
             position: relative;
+
+            
             .title{
                 @include standard-text;
                 text-transform: uppercase;
