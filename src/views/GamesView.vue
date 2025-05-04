@@ -133,4 +133,3 @@ export default {
 }
 
 </script>
-//'clip-path': 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)' full
