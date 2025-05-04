@@ -81,8 +81,6 @@ export default {
     document.addEventListener("click", this.scaleCursor)
     document.addEventListener("scroll", this.closeSidebar)
     this.scrollSmooth()
-
-    this.animate()
   },
   methods: {
     hideLoader() {
@@ -134,11 +132,7 @@ export default {
       next(vm => {
         vm.animate();
       });
-    },
-    animate() {
-      ////
     }
-
   },
 };
 

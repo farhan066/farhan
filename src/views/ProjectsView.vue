@@ -3,7 +3,7 @@
         <section id="all-projects">
             <h1 class="page_head fade">Projects</h1>
             <div class="wrapper">
-                <ProjectCard v-for="(pro, i) in projects" :pro="pro" :key="pro.id" :index="i" />
+                <ProjectCard class="fade_up" v-for="(pro, i) in projects" :pro="pro" :key="pro.id" :index="i" />
             </div>
         </section>
 
@@ -65,6 +65,40 @@ export default {
                         delay: .3,
                         ease: 'expo.out',
                         duration: 1.2
+                    })
+            })
+            const fadeUp = document.querySelectorAll(".fade_up")
+            fadeUp.forEach((el) => {
+                gsap.from(el, {
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 90%",
+                        end: 'top 5%'
+                    },
+                    opacity: 0,
+                    y: 50,
+                    duration: .6,
+                    stagger: 3,
+                    delay: .2
+                })
+            });
+
+            const fade = document.querySelectorAll('.fade')
+            fade.forEach(word => {
+                const text = new SplitType(word, { types: 'words' })
+
+                gsap.fromTo(text.words, {
+                    opacity: 0
+                },
+                    {
+                        scrollTrigger: {
+                            trigger: word,
+                            start: 'top 95%',
+                            end: 'top 5%'
+                        },
+                        opacity: 1,
+                        stagger: .1,
+                        delay: .2
                     })
             })
         }
