@@ -9,8 +9,9 @@
           <span class="text_up">creative</span>
           <span class="text_up">explorer</span>
           <p class="intro-p fade_simple">
-            Explore a world of curiosity and exploration.
-            Dive into captivating articles, stories, and inspiration.
+            Building slowly, learning always.
+            Exploring ideas, one click at a time.
+            Making small things with care.
           </p>
         </div>
         <img src="@/assets/img/scrolltext.svg" alt="Scroll Down" class="circle__text">
@@ -25,10 +26,14 @@
       </div>
       <div class="about-text fade_fast">
         <p class="para">
-          I'm Farhan, a student with a deep passion for exploration. Whether it's delving into the digital world or
-          experimenting with digital design, I'm always on the lookout for new horizons. <br><br>
-          This is my canvas, where I share my creative works, hobbies, and the exciting journey of discovery. Join me as
-          we navigate the realms of innovation and imagination!
+            I'm Farhan, based in Bangladesh with a creative foundation rooted in design.
+            My early experience in design cultivated a strong passion for creating visually engaging content.<br><br>
+            I am actively developing my skills across key areas of web creation, with a particular focus on UI/UX design,
+            frontend development, and building dynamic platforms using WordPress. I enjoy the process of translating creative concepts into functional,
+            intuitive, and well-designed digital experiences.<br><br>
+            As I continue to expand my knowledge and refine my abilities, I am focused on applying these skills professionally.
+            My goal is to contribute my growing expertise to companies and collaborate on impactful projects.
+
         </p>
       </div>
     </section>

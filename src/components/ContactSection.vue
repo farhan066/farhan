@@ -26,7 +26,7 @@
 export default {
   data() {
     return {
-      email: 'hello@farhannn.me',
+      email: 'farhan06.contact@gmail.com',
       currentYear: new Date().getFullYear()
     }
   }
