@@ -1,6 +1,6 @@
 #all-projects{
 
-    .wrapper{
+    .projects-wrapper{
         display: grid;
         grid-gap: 40px;
             @include breakpoint-up(medium){

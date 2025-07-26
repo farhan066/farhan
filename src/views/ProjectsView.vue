@@ -2,7 +2,7 @@
     <div class="projects-page">
         <section id="all-projects">
             <h1 class="page_head fade">Projects</h1>
-            <div class="wrapper">
+            <div class="projects-wrapper">
                 <ProjectCard class="fade_up" v-for="(pro, i) in projects" :pro="pro" :key="pro.id" :index="i" />
             </div>
         </section>
