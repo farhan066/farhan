@@ -124,6 +124,20 @@ section:first-child {
     padding-right: 25%;
   }
 }
+@mixin s-text { //special text
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -1px;
+  padding-right: 0;
+
+  @include breakpoint-up(medium) {
+    padding-right: 10%;
+  }
+  @include breakpoint-up(large) {
+    padding-right: 25%;
+  }
+}
 @mixin big-text {
   font-size: var(--font-lg);
   line-height: 0.85;

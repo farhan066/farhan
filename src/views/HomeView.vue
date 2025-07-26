@@ -26,13 +26,11 @@
       </div>
       <div class="about-text fade_fast">
         <p class="para">
-            I'm Farhan, based in Bangladesh with a creative foundation rooted in design.
-            My early experience in design cultivated a strong passion for creating visually engaging content.<br><br>
-            I am actively developing my skills across key areas of web creation, with a particular focus on UI/UX design,
-            frontend development, and building dynamic platforms using WordPress. I enjoy the process of translating creative concepts into functional,
-            intuitive, and well-designed digital experiences.<br><br>
-            As I continue to expand my knowledge and refine my abilities, I am focused on applying these skills professionally.
-            My goal is to contribute my growing expertise to companies and collaborate on impactful projects.
+          I'm Farhan, a frontend and WordPress developer with a focus on building user-first websites that combine function 
+          with aesthetic clarity. <br><br>I specialize in frontend development, Elementor-based WordPress sites, eCommerce solutions, 
+          and business websites. With a strong creative sense and a sharp eye for design, I craft clean, responsive interfaces 
+          that engage users and support your goals. <br><br>
+          I’m always open to collaborating on impactful projects that value thoughtful design and purposeful user experience.
 
         </p>
       </div>
