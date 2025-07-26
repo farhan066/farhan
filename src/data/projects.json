@@ -19,5 +19,20 @@
         "link":"https://alamgirpasha.com", 
         "title": "Alamgir Pasha", 
         "tools":"Landing Page, WordPress, Elementor"
+    },
+    {
+        "id": 4, 
+        "img":"devhive2.webp", 
+        "link":"https://devhive-site.netlify.app/", 
+        "title": "DevHive", 
+        "tools":"Agency, HTML/CSS, JavaScript"
+    }
+    ,
+    {
+        "id": 5, 
+        "img":"devhive2.webp", 
+        "link":"https://zesprex.netlify.app/", 
+        "title": "Cloud Hosting", 
+        "tools":"Cloud Hosting, Concept Project, HTML/CSS"
     }
 ]
