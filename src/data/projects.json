@@ -27,12 +27,4 @@
         "title": "DevHive", 
         "tools":"Agency, HTML/CSS, JavaScript"
     }
-    ,
-    {
-        "id": 5, 
-        "img":"devhive2.webp", 
-        "link":"https://zesprex.netlify.app/", 
-        "title": "Cloud Hosting", 
-        "tools":"Cloud Hosting, Concept Project, HTML/CSS"
-    }
 ]
