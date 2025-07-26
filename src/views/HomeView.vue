@@ -25,10 +25,11 @@
       </div>
       <div class="about-text fade_fast">
         <p class="para">
-          I'm Farhan, a student with a deep passion for exploration. Whether it's delving into the digital world or
-          experimenting with digital design, I'm always on the lookout for new horizons. <br><br>
-          This is my canvas, where I share my creative works, hobbies, and the exciting journey of discovery. Join me as
-          we navigate the realms of innovation and imagination!
+          I'm Farhan, a frontend and WordPress developer with a focus on building user-first websites that combine function 
+          with aesthetic clarity. I specialize in frontend development, Elementor-based WordPress sites, eCommerce solutions, 
+          and business websites. With a strong creative sense and a sharp eye for design, I craft clean, responsive interfaces 
+          that engage users and support your goals. 
+          I’m always open to collaborating on impactful projects that value thoughtful design and purposeful user experience.
         </p>
       </div>
     </section>
