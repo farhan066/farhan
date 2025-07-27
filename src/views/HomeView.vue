@@ -38,9 +38,7 @@
 
     <!-- =========Projects======== -->
     <section id="projects">
-      <h1 class="headline">Feel free to explore a couple of <span class="highlight fade">projects</span> I've had
-        some fun
-        working on.</h1>
+      <h1 class="headline">Feel free to browse through a few of my <span class="highlight fade">works</span> below.</h1>
 
       <div class="wrapper">
         <ProjectCard class="opacity_hide" v-for="(pro, i) in projects.slice(0, 3)" :pro="pro" :key="pro.id" :index="i" />
