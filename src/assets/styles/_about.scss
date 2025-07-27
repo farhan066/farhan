@@ -12,6 +12,7 @@
       object-fit: cover;
       cursor: pointer;
       position: relative;
+      filter: grayscale(100%);
       transition: .3s;
 
       &:hover{

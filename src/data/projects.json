@@ -26,5 +26,12 @@
         "link":"https://devhive-site.netlify.app/", 
         "title": "DevHive", 
         "tools":"Agency, HTML/CSS, JavaScript"
+    },
+    {
+        "id": 5, 
+        "img":"cloud.webp", 
+        "link":"https://zesprex.netlify.app", 
+        "title": "Cloud Service", 
+        "tools":"Cloud Service, Concept Project, HTML/CSS"
     }
 ]

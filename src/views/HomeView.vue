@@ -21,7 +21,7 @@
     <!-- ========About======= -->
     <section id="short-about">
       <div class="about-head">
-        <div class="circle-photo fade_simple"><img src="@/assets/img/farhan.webp" alt="Farhan"></div>
+        <div class="circle-photo fade_simple"><img src="@/assets/img/me.webp" alt="Farhan"></div>
         <a href="#" class="btn-cir">More <br> About Me</a>
       </div>
       <div class="about-text fade_fast">
@@ -43,7 +43,7 @@
         working on.</h1>
 
       <div class="wrapper">
-        <ProjectCard class="opacity_hide" v-for="(pro, i) in projects" :pro="pro" :key="pro.id" :index="i" />
+        <ProjectCard class="opacity_hide" v-for="(pro, i) in projects.slice(0, 3)" :pro="pro" :key="pro.id" :index="i" />
       </div>
     </section>
 
