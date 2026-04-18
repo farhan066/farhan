@@ -24,6 +24,15 @@ const routes = [
     path: '/projects',
     name: 'projects',
     component: ProjectsView
+  },
+  {
+    path: '/drv',
+    component: {
+      beforeRouteEnter() {
+        window.location.href = 'https://drive.google.com/drive/folders/1aiIHBW-7m7AEdhxv1pxQ3g8O0WNNpz_v?usp=sharing'
+      },
+      render: () => null
+    }
   }
 ]
 
